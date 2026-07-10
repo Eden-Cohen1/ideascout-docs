@@ -1,0 +1,18 @@
+# Dependencies
+/node_modules
+
+# Docusaurus build output & caches
+/build
+/.docusaurus
+/.cache-loader
+
+# Vercel
+.vercel
+
+# Misc
+.DS_Store
+*.log
+.env.local
+.env.*.local
+npm-debug.log*
+yarn-error.log*

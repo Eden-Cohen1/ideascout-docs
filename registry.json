@@ -1,0 +1,15 @@
+{
+  "$comment": "Doc Registry — replaces the Notion 'Doc Registry' database. Maps source areas of ideascout to the canonical doc pages that describe them, so propose-docs can decide update-vs-new and detect staleness. The docs agent reads and updates this file; publish-docs commits changes to it as part of a merge.",
+  "version": 1,
+  "docsRepo": "Eden-Cohen1/ideascout-docs",
+  "sourceRepo": "Eden-Cohen1/ideascout",
+  "entries": [
+    {
+      "docPath": "docs/architecture/docs-agent.md",
+      "title": "Docs agent architecture",
+      "sourceGlobs": [".hermes/**", "ops/**"],
+      "lastReconciledPR": null,
+      "lastReconciledAt": null
+    }
+  ]
+}
