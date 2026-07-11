@@ -1,15 +1,9 @@
 {
-  "$comment": "Doc Registry. Maps source areas of ideascout to the canonical doc pages that describe them.",
+  "$comment": "Doc Registry.",
   "version": 1,
   "docsRepo": "Eden-Cohen1/ideascout-docs",
   "sourceRepo": "Eden-Cohen1/ideascout",
   "entries": [
-    {
-      "docPath": "docs/architecture/docs-agent.md",
-      "title": "Docs agent architecture",
-      "sourceGlobs": [".hermes/**", "ops/**"],
-      "lastReconciledPR": null,
-      "lastReconciledAt": null
-    }
+    { "docPath": "docs/architecture/docs-agent.md", "title": "Docs agent architecture", "sourceGlobs": [".hermes/**","ops/**"], "lastReconciledPR": null, "lastReconciledAt": null }
   ]
 }
