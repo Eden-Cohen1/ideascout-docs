@@ -1,3 +1,4 @@
 {"ts":"2026-07-09T00:00:00Z","pr":null,"event":"ledger-initialized","outcome":"no-change","note":"Seed entry; append-only."}
 {"ts":"2026-07-11T10:07:14Z","pr":15,"event":"published","outcome":"published","docPath":"docs/architecture/deepseek-v4-provider.md","proposalPr":15,"approvedBy":"Eden Cohen","note":"Approved in Slack thread 1783764227.983409."}
 {"ts": "2026-07-11T16:15:57Z", "pr": 24, "event": "published", "outcome": "update-doc", "proposalPr": 6, "approvedBy": "github-merge", "note": "merged on GitHub"}
+{"ts": "2026-07-11T23:32:10Z", "pr": 27, "event": "published", "outcome": "update-doc", "proposalPr": 7, "approvedBy": "github-merge", "note": "merged on GitHub"}
