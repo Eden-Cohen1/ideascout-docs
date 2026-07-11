@@ -15,9 +15,11 @@ Keep non-web evidence acquisition behind a stable `SignalSource` contract so the
 ## Behavior
 
 - Signal sources are registered in `ProvidersModule` under `SIGNAL_SOURCES`, with deterministic stand-ins in `MOCK_SIGNAL_SOURCES`.
+- `ResearchProcessor` seeds `ctx.signals` from the registry before classification exists; `GatherStep` narrows that set later with `SignalRegistry.activeFor()` once classification and tier are known.
 - `SignalRegistry.candidateSources()` returns the available real sources. It falls back to the mock pool only when no real source is available at all.
 - Missing config for one signal source does not trigger a per-source mock fallback; it simply removes that source from the real pool.
-- `GatherStep` uses the active signal sources after classification to collect signal items, then turns each item into a synthetic `FetchedPage` plus an `EvidenceItem`.
+- `qualityTierForSignal()` assigns a fixed provenance-based quality tier to signal evidence, and `SEARCH_PRICES` now tracks the signal-source ids separately from web search providers.
+- `GatherStep` collects signal items, then turns each item into a synthetic `FetchedPage` plus an `EvidenceItem` so VERIFY/quote matching can see the signal text itself.
 - Signal collection is query-driven. If the fast LLM call works, each engine gets tailored queries; otherwise the source-specific `defaultQueries()` fallback is used.
 - `GatherStep` also emits a `COVERAGE` artifact after gap analysis and any bounded follow-up rounds.
 
@@ -31,7 +33,7 @@ Source-specific behavior:
 
 ## Why
 
-PR #24 expands evidence quality by routing the research pipeline to signal sources where the evidence already lives, instead of relying on web search alone. It also pulls the coverage-gap follow-up loop forward so the pipeline can repair weak evidence during GATHER.
+Open question: the merged source PR does not link a Linear issue, so the product rationale for introducing the signal-source stack and the coverage-gap follow-up loop is not documented in the source materials available to the docs agent.
 
 ## Edge cases & gotchas
 
