@@ -1,1 +1,2 @@
 {"ts":"2026-07-09T00:00:00Z","pr":null,"event":"ledger-initialized","outcome":"no-change","note":"Seed entry; append-only."}
+{"ts":"2026-07-11T10:07:14Z","pr":15,"event":"published","outcome":"published","docPath":"docs/architecture/deepseek-v4-provider.md","proposalPr":15,"approvedBy":"Eden Cohen","note":"Approved in Slack thread 1783764227.983409."}
