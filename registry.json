@@ -4,6 +4,7 @@
   "docsRepo": "Eden-Cohen1/ideascout-docs",
   "sourceRepo": "Eden-Cohen1/ideascout",
   "entries": [
-    { "docPath": "docs/architecture/docs-agent.md", "title": "Docs agent architecture", "sourceGlobs": [".hermes/**","ops/**"], "lastReconciledPR": null, "lastReconciledAt": null }
+    { "docPath": "docs/architecture/docs-agent.md", "title": "Docs agent architecture", "sourceGlobs": [".hermes/**","ops/**"], "lastReconciledPR": null, "lastReconciledAt": null },
+    { "docPath": "docs/architecture/llm-provider-stack.md", "title": "LLM provider stack", "sourceGlobs": ["apps/api/src/config/**","apps/api/src/modules/providers/llm/**","apps/api/src/pipeline/steps/**","packages/shared/src/enums.ts"], "lastReconciledPR": 15, "lastReconciledAt": "2026-07-04T16:08:42Z" }
   ]
 }
