@@ -10,6 +10,20 @@
       "sourceGlobs": [".hermes/**", "ops/**"],
       "lastReconciledPR": null,
       "lastReconciledAt": null
+    },
+    {
+      "docPath": "docs/architecture/deepseek-v4-provider.md",
+      "title": "DeepSeek V4 provider",
+      "sourceGlobs": [
+        "apps/api/src/config/**",
+        "apps/api/src/modules/providers/**",
+        "apps/api/src/pipeline/steps/**",
+        "packages/shared/src/enums.ts",
+        "README.md",
+        ".env.example"
+      ],
+      "lastReconciledPR": 15,
+      "lastReconciledAt": "2026-07-11T00:57:57Z"
     }
   ]
 }
