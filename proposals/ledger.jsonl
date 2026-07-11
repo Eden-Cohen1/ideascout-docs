@@ -1,2 +1,3 @@
 {"ts":"2026-07-09T00:00:00Z","pr":null,"event":"ledger-initialized","outcome":"no-change","note":"Seed entry created during Notion→Docusaurus migration. One JSON object per line; append-only."}
 {"ts":"2026-07-11T00:33:46Z","pr":14,"event":"no-change","outcome":"no-change","docPath":null,"proposalPr":null,"approvedBy":null,"note":"Backend refinement changes did not affect canonical docs."}
+{"ts":"2026-07-11T01:22:36Z","pr":15,"event":"proposed","outcome":"new-doc","docPath":"docs/architecture/llm-provider-configuration.md","proposalPr":2,"approvedBy":null,"note":"draft proposal opened; no Linear issue linked; open question remains on DeepSeek default rationale"}
