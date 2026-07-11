@@ -1,0 +1,52 @@
+# Option A — finalize a published doc when a proposal PR is merged.
+# Lives in ideascout-docs at .github/workflows/finalize.yml (logic in .github/scripts/finalize.py).
+#
+# Approval = a human merges the proposal PR on GitHub (only repo writers can — i.e. you). On that
+# merge this Action (pure code, NO LLM) appends the `published` ledger line and posts "Published ✅"
+# into the proposal's Slack thread. It replaces the publish-docs skill.
+#
+# Repo secrets required (Settings → Secrets and variables → Actions):
+#   SLACK_BOT_TOKEN     – the docs bot token
+#   DOCS_SLACK_CHANNEL  – C0BESLBGVLM
+
+name: finalize-published-doc
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    if: >-
+      github.event.pull_request.merged == true &&
+      startsWith(github.event.pull_request.head.ref, 'proposal/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Finalize (append ledger + Slack notify)
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          DOCS_SLACK_CHANNEL: ${{ secrets.DOCS_SLACK_CHANNEL }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          DOCS_PR: ${{ github.event.pull_request.number }}
+        run: python3 .github/scripts/finalize.py
+
+      - name: Commit ledger update
+        run: |
+          if ! git diff --quiet -- proposals/ledger.jsonl; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add proposals/ledger.jsonl
+            git commit -m "ledger: published (docs PR #${DOCS_PR})"
+            git push
+          else
+            echo "no ledger change (already finalized)"
+          fi
+        env:
+          DOCS_PR: ${{ github.event.pull_request.number }}
