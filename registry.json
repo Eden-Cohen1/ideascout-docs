@@ -24,6 +24,25 @@
       ],
       "lastReconciledPR": 15,
       "lastReconciledAt": "2026-07-11T00:57:57Z"
+    },
+    {
+      "docPath": "docs/architecture/signal-source-stack.md",
+      "title": "Signal source stack",
+      "sourceGlobs": [
+        "apps/api/src/config/**",
+        "apps/api/src/modules/providers/providers.module.ts",
+        "apps/api/src/modules/providers/provider.tokens.ts",
+        "apps/api/src/modules/providers/signals/**",
+        "apps/api/src/modules/research/research.processor.ts",
+        "apps/api/src/pipeline/coverage.ts",
+        "apps/api/src/pipeline/cost-tracker.ts",
+        "apps/api/src/pipeline/evidence.ts",
+        "apps/api/src/pipeline/pipeline.types.ts",
+        "apps/api/src/pipeline/steps/gather.step.ts",
+        "packages/shared/src/enums.ts"
+      ],
+      "lastReconciledPR": null,
+      "lastReconciledAt": null
     }
   ]
 }
