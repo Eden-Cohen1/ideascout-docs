@@ -10,6 +10,19 @@
       "sourceGlobs": [".hermes/**", "ops/**"],
       "lastReconciledPR": null,
       "lastReconciledAt": null
+    },
+    {
+      "docPath": "docs/architecture/llm-provider-configuration.md",
+      "title": "LLM provider configuration",
+      "sourceGlobs": [
+        "README.md",
+        "apps/api/src/config/**",
+        "apps/api/src/modules/providers/llm/**",
+        "apps/api/src/pipeline/steps/**",
+        "packages/shared/src/enums.ts"
+      ],
+      "lastReconciledPR": 15,
+      "lastReconciledAt": "2026-07-11T00:00:00Z"
     }
   ]
 }
