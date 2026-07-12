@@ -26,6 +26,19 @@
       "lastReconciledAt": "2026-07-11T00:57:57Z"
     },
     {
+      "docPath": "docs/architecture/app-shell.md",
+      "title": "Authenticated app shell and logout chrome",
+      "sourceGlobs": [
+        "apps/web/src/App.vue",
+        "apps/web/src/App.spec.ts",
+        "apps/web/src/components/AppShell.vue",
+        "apps/web/src/components/AppShell.spec.ts",
+        "apps/web/src/views/HomeView.vue"
+      ],
+      "lastReconciledPR": null,
+      "lastReconciledAt": null
+    },
+    {
       "docPath": "docs/architecture/signal-source-stack.md",
       "title": "Signal source stack",
       "sourceGlobs": [
