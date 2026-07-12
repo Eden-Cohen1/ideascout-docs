@@ -7,7 +7,10 @@
     {
       "docPath": "docs/architecture/docs-agent.md",
       "title": "Docs agent architecture",
-      "sourceGlobs": [".hermes/**", "ops/**"],
+      "sourceGlobs": [
+        ".hermes/**",
+        "ops/**"
+      ],
       "lastReconciledPR": null,
       "lastReconciledAt": null
     },
@@ -43,6 +46,22 @@
       ],
       "lastReconciledPR": null,
       "lastReconciledAt": null
+    },
+    {
+      "docPath": "docs/guides/authentication.md",
+      "title": "Authentication flow",
+      "sourceGlobs": [
+        "apps/web/src/views/LoginView.vue",
+        "apps/web/src/views/RegisterView.vue",
+        "apps/web/src/router/index.ts",
+        "apps/web/src/lib/auth-schemas.ts",
+        "apps/web/src/lib/redirect.ts",
+        "apps/web/src/lib/validation.ts",
+        "apps/web/src/lib/errors.ts",
+        "packages/shared/src/dto/auth.dto.ts"
+      ],
+      "lastReconciledPR": 35,
+      "lastReconciledAt": "2026-07-12T14:38:25Z"
     }
   ]
 }
