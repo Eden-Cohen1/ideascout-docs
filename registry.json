@@ -43,6 +43,16 @@
       ],
       "lastReconciledPR": null,
       "lastReconciledAt": null
+    },
+    {
+      "docPath": "docs/architecture/depth-quality-spike.md",
+      "title": "2BU-19 search-depth spike results",
+      "sourceGlobs": [
+        "docs/superpowers/**",
+        "scripts/spike-2bu19/**"
+      ],
+      "lastReconciledPR": 28,
+      "lastReconciledAt": "2026-07-12T11:06:26Z"
     }
   ]
 }
