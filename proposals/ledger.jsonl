@@ -5,3 +5,4 @@
 {"ts":"2026-07-12T11:56:31Z","pr":30,"event":"no-change","outcome":"no-change","docPath":null,"proposalPr":null,"approvedBy":null,"note":"Merged PR only added vitest config and tests; no canonical docs impact."}
 {"ts":"2026-07-12T14:49:01Z","pr":35,"event":"proposed","outcome":"new-doc","docPath":"docs/guides/authentication.md","proposalPr":13,"threadTs":"1783867727.668589","note":"draft proposal opened"}
 {"ts": "2026-07-13T09:54:13Z", "pr": 32, "event": "published", "outcome": "update-doc", "proposalPr": 10, "approvedBy": "github-merge", "note": "merged on GitHub"}
+{"ts":"2026-07-13T09:58:04Z","pr":39,"event":"proposed","outcome":"new-doc","docPath":"docs/architecture/auth-token-foundation.md","proposalPr":17,"threadTs":"1783936684.345759","note":"draft proposal opened"}
