@@ -26,6 +26,21 @@
       "lastReconciledAt": "2026-07-11T00:57:57Z"
     },
     {
+      "docPath": "docs/architecture/web-verification-gate.md",
+      "title": "Web verification gate and design-token enforcement",
+      "sourceGlobs": [
+        "package.json",
+        "apps/web/package.json",
+        "apps/web/scripts/token-lint.mjs",
+        "apps/web/DESIGN.md",
+        "eslint.config.mjs",
+        ".github/workflows/ci.yml",
+        "apps/web/src/**/*.vue"
+      ],
+      "lastReconciledPR": 31,
+      "lastReconciledAt": "2026-07-12T11:52:04Z"
+    },
+    {
       "docPath": "docs/architecture/signal-source-stack.md",
       "title": "Signal source stack",
       "sourceGlobs": [
