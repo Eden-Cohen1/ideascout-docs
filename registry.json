@@ -43,6 +43,17 @@
       ],
       "lastReconciledPR": null,
       "lastReconciledAt": null
+    },
+    {
+      "docPath": "docs/architecture/frontend-verify-gate.md",
+      "title": "Frontend verification gate and testing reference",
+      "sourceGlobs": [
+        ".claude/skills/frontend-verify/**",
+        ".claude/skills/frontend-task/SKILL.md",
+        ".claude/skills/frontend-task/references/testing.md"
+      ],
+      "lastReconciledPR": 32,
+      "lastReconciledAt": "2026-07-12T11:52:10Z"
     }
   ]
 }
