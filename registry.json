@@ -69,6 +69,19 @@
       ],
       "lastReconciledPR": 32,
       "lastReconciledAt": "2026-07-12T11:52:10Z"
+    },
+    {
+      "docPath": "docs/architecture/projects-data-layer.md",
+      "title": "Projects data layer",
+      "sourceGlobs": [
+        "apps/web/src/api/projects.api.ts",
+        "apps/web/src/stores/projects.store.ts",
+        "apps/web/src/api/client.ts",
+        "apps/web/src/lib/errors.ts",
+        "packages/shared/src/dto/project.dto.ts"
+      ],
+      "lastReconciledPR": 40,
+      "lastReconciledAt": "2026-07-13T13:23:55Z"
     }
   ]
 }
