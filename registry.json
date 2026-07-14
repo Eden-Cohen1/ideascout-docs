@@ -65,10 +65,23 @@
       "sourceGlobs": [
         ".claude/skills/frontend-verify/**",
         ".claude/skills/frontend-task/SKILL.md",
-        ".claude/skills/frontend-task/references/testing.md"
+        ".claude/skills/frontend-task/references/testing.md",
+        ".claude/skills/frontend-task/references/performance.md"
       ],
-      "lastReconciledPR": 32,
-      "lastReconciledAt": "2026-07-12T11:52:10Z"
+      "lastReconciledPR": 41,
+      "lastReconciledAt": "2026-07-13T12:43:06Z"
+    },
+    {
+      "docPath": "docs/architecture/repo-agent-scaffolding.md",
+      "title": "Repo agent scaffolding",
+      "sourceGlobs": [
+        ".claude/skills/**",
+        "CLAUDE.md",
+        "CONTEXT-MAP.md",
+        "docs/agents/**"
+      ],
+      "lastReconciledPR": 43,
+      "lastReconciledAt": "2026-07-14T05:50:10Z"
     }
   ]
 }
