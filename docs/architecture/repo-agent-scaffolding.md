@@ -6,10 +6,10 @@ sidebar_position: 6
 
 # Repo agent scaffolding
 
-This page documents the repo-local agent guidance added in ideascout PR #43 and refined in
-PR #44: the vendored `.claude/skills/` tree, the top-level `CLAUDE.md`, the root
-`CONTEXT-MAP.md`, the static `docs/agents/skills-map.md` guide, and the `docs/agents/`
-guidance pages.
+This page documents the repo-local agent guidance added in ideascout PR #43, refined in
+PR #44, and tightened in PR #46: the vendored `.claude/skills/` tree, the top-level
+`CLAUDE.md`, the root `CONTEXT-MAP.md`, the static `docs/agents/skills-map.md` guide, and
+the `docs/agents/` guidance pages.
 
 ## Purpose
 
@@ -47,13 +47,15 @@ personal setup.
 - The skill set itself was reshuffled so the repo has one clear choice per task: `spec-review`
   now names standards + spec conformance, while a few overlapping tools were pushed to
   slash-only use.
+- PR #46 tightened the frontend guidance again: `frontend-task` now requires a screenshot of
+  every visual state, and `frontend-verify` now records that screenshot coverage in the
+  verdict block.
 
 ## Why
 
-Open question: the PR does not include a linked Linear issue or another explicit rationale for
-why these agent instructions were vendored into the repo, or why the skill-set collision
-cleanup needed to land now. The doc can safely say what changed, but the business reason for
-preserving this setup in canonical docs still needs confirmation before publish.
+The PR turns a screenshot checklist into a standing repo convention so reviewers can see
+all visual states without checking out the branch, and so the Linear issue can carry the
+visual record too.
 
 ## Edge cases & gotchas
 
@@ -64,10 +66,13 @@ preserving this setup in canonical docs still needs confirmation before publish.
   Issues.
 - The vendored skills are repo content, but this page should not try to summarize each skill's
   behavior individually.
+- If a visual state cannot be captured in a screenshot, the PR should say so explicitly
+  rather than silently omitting it.
 
 ## References
 
-- Source PR: https://github.com/Eden-Cohen1/ideascout/pull/44
-- Prior source PR: https://github.com/Eden-Cohen1/ideascout/pull/43
+- Source PR: https://github.com/Eden-Cohen1/ideascout/pull/46
+- Prior source PRs: https://github.com/Eden-Cohen1/ideascout/pull/44 and
+  https://github.com/Eden-Cohen1/ideascout/pull/43
 
-<!-- provenance: drafted from ideascout PR #44 -->
+<!-- provenance: drafted from ideascout PR #46 -->
