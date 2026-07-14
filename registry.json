@@ -69,6 +69,18 @@
       ],
       "lastReconciledPR": 32,
       "lastReconciledAt": "2026-07-12T11:52:10Z"
+    },
+    {
+      "docPath": "docs/architecture/projects-pagination.md",
+      "title": "Projects pagination and shared page contracts",
+      "sourceGlobs": [
+        "apps/api/src/modules/projects/**",
+        "packages/shared/src/dto/pagination.ts",
+        "packages/shared/src/dto/project.dto.ts",
+        "packages/shared/src/index.ts"
+      ],
+      "lastReconciledPR": 42,
+      "lastReconciledAt": "2026-07-14T20:01:06Z"
     }
   ]
 }
