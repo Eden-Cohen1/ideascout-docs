@@ -8,3 +8,4 @@
 {"ts": "2026-07-13T09:55:52Z", "pr": 31, "event": "published", "outcome": "update-doc", "proposalPr": 11, "approvedBy": "github-merge", "note": "merged on GitHub"}
 {"ts":"2026-07-15T16:49:55Z","pr":48,"event":"proposed","outcome":"new-doc","docPath":"docs/architecture/project-creation-from-dashboard.md","proposalPr":26,"threadTs":"1784134187.534539","note":"draft proposal opened"}
 {"ts": "2026-07-15T18:02:23Z", "pr": 48, "event": "published", "outcome": "new-doc", "proposalPr": 26, "approvedBy": "github-merge", "note": "merged on GitHub"}
+{"ts": "2026-07-15T18:44:59Z", "pr": 29, "event": "published", "outcome": "update-doc", "proposalPr": 9, "approvedBy": "github-merge", "note": "merged on GitHub"}
