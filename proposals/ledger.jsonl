@@ -4,6 +4,19 @@
 {"ts": "2026-07-11T23:32:10Z", "pr": 27, "event": "published", "outcome": "update-doc", "proposalPr": 7, "approvedBy": "github-merge", "note": "merged on GitHub"}
 {"ts":"2026-07-12T11:56:31Z","pr":30,"event":"no-change","outcome":"no-change","docPath":null,"proposalPr":null,"approvedBy":null,"note":"Merged PR only added vitest config and tests; no canonical docs impact."}
 {"ts":"2026-07-12T14:49:01Z","pr":35,"event":"proposed","outcome":"new-doc","docPath":"docs/guides/authentication.md","proposalPr":13,"threadTs":"1783867727.668589","note":"draft proposal opened"}
+{"ts":"2026-07-12T15:24:18Z","pr":36,"event":"proposed","outcome":"new-doc","docPath":"docs/architecture/app-shell.md","proposalPr":14,"threadTs":"1783869842.496629","note":"draft proposal opened"}
+{"ts":"2026-07-12T18:51:37Z","pr":37,"event":"proposed","outcome":"new-doc","docPath":"docs/architecture/email-service.md","proposalPr":16,"threadTs":"1783882292.114399","note":"draft proposal opened"}
 {"ts": "2026-07-13T09:54:13Z", "pr": 32, "event": "published", "outcome": "update-doc", "proposalPr": 10, "approvedBy": "github-merge", "note": "merged on GitHub"}
 {"ts": "2026-07-13T09:55:52Z", "pr": 31, "event": "published", "outcome": "update-doc", "proposalPr": 11, "approvedBy": "github-merge", "note": "merged on GitHub"}
+{"ts":"2026-07-13T09:58:04Z","pr":39,"event":"proposed","outcome":"new-doc","docPath":"docs/architecture/auth-token-foundation.md","proposalPr":17,"threadTs":"1783936684.345759","note":"draft proposal opened"}
+{"ts":"2026-07-13T12:50:23Z","pr":41,"event":"proposed","outcome":"update-doc","docPath":"docs/architecture/frontend-verify-gate.md","proposalPr":18,"threadTs":"1783947014.667849","note":"draft proposal opened"}
 {"ts":"2026-07-13T13:26:41Z","pr":40,"event":"proposed","outcome":"new-doc","docPath":"docs/architecture/projects-data-layer.md","proposalPr":19,"threadTs":"1783949194.311199","note":"draft proposal opened"}
+{"ts":"2026-07-15T16:49:55Z","pr":48,"event":"proposed","outcome":"new-doc","docPath":"docs/architecture/project-creation-from-dashboard.md","proposalPr":26,"threadTs":"1784134187.534539","note":"draft proposal opened"}
+{"ts": "2026-07-15T18:02:23Z", "pr": 48, "event": "published", "outcome": "new-doc", "proposalPr": 26, "approvedBy": "github-merge", "note": "merged on GitHub"}
+{"ts": "2026-07-15T18:44:59Z", "pr": 29, "event": "published", "outcome": "update-doc", "proposalPr": 9, "approvedBy": "github-merge", "note": "merged on GitHub"}
+{"ts": "2026-07-15T18:51:07Z", "pr": 33, "event": "published", "outcome": "update-doc", "proposalPr": 12, "approvedBy": "github-merge", "note": "merged on GitHub"}
+{"ts": "2026-07-15T19:02:55Z", "pr": 35, "event": "published", "outcome": "new-doc", "proposalPr": 13, "approvedBy": "github-merge", "note": "merged on GitHub"}
+{"ts": "2026-07-15T20:37:49Z", "pr": 36, "event": "published", "outcome": "new-doc", "proposalPr": 14, "approvedBy": "github-merge", "note": "merged on GitHub"}
+{"ts": "2026-07-15T20:49:36Z", "pr": 37, "event": "published", "outcome": "new-doc", "proposalPr": 16, "approvedBy": "github-merge", "note": "merged on GitHub"}
+{"ts": "2026-07-15T20:54:13Z", "pr": 39, "event": "published", "outcome": "new-doc", "proposalPr": 17, "approvedBy": "github-merge", "note": "merged on GitHub"}
+{"ts": "2026-07-15T21:01:10Z", "pr": 41, "event": "published", "outcome": "update-doc", "proposalPr": 18, "approvedBy": "github-merge", "note": "merged on GitHub"}
