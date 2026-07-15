@@ -33,7 +33,7 @@ The linked Linear issue says `frontend-task` covers how to build a screen, but v
 
 ## References
 
-- Source PR: https://github.com/Eden-Cohen1/ideascout/pull/33
+- Source PR: https://github.com/Eden-Cohen1/ideascout/pull/32
 - Linear issue: https://linear.app/2builders/issue/2BU-25/add-frontend-verify-skill-and-testing-reference-for-appsweb
 
-<!-- provenance: drafted from ideascout PR #33 -->
+<!-- provenance: drafted from ideascout PR #32 -->
