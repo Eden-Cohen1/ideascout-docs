@@ -38,7 +38,8 @@ and OAuth out of scope, so this page only documents the in-app email/password fl
 - The registration form treats a blank or whitespace-only display name as omitted.
 - `confirmPassword` is a client-only field; the API never receives it.
 - The redirect helper only accepts same-app paths that start with a single `/`. Protocol-relative
-  values like `//example.com` and strings without a leading slash are rejected.
+  values like `//example.com`, strings without a leading slash, and non-string values (e.g. a
+  repeated `?redirect=` query param, which arrives as an array) all fall back to `/`.
 - The auth error handler turns a bare `401 Unauthorized` into session-expired copy, but keeps a
   specific server message such as invalid credentials when one is provided.
 - Field validation shows one message per field, with the first issue winning.
