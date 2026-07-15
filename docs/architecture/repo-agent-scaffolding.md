@@ -50,10 +50,16 @@ personal setup.
 
 ## Why
 
-Open question: the PR does not include a linked Linear issue or another explicit rationale for
-why these agent instructions were vendored into the repo, or why the skill-set collision
-cleanup needed to land now. The doc can safely say what changed, but the business reason for
-preserving this setup in canonical docs still needs confirmation before publish.
+The stated goal (source PR #44) is to make the repo's own skills and the vendored Matt Pocock
+skills read as **one coherent system with a single clear choice per task** — resolving name
+collisions (notably `code-review` → `spec-review`), demoting directly-competing tools to
+slash-only, and adding the task→skill map plus cross-referenced boundaries so neither the model
+nor a person is left guessing which skill to reach for. Vendoring the skills into the repo
+(source PR #43) keeps that guidance versioned with the codebase rather than in a personal setup.
+
+Open question: neither PR links a Linear issue, so there is no tracked initiative to point at
+for the longer-term intent — worth a human confirmation before publish, but the change itself is
+well-motivated in the PR descriptions.
 
 ## Edge cases & gotchas
 
