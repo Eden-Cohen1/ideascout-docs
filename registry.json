@@ -69,6 +69,20 @@
       ],
       "lastReconciledPR": 32,
       "lastReconciledAt": "2026-07-12T11:52:10Z"
+    },
+    {
+      "docPath": "docs/architecture/project-creation-from-dashboard.md",
+      "title": "Project creation from the dashboard",
+      "sourceGlobs": [
+        "apps/web/src/components/CreateProjectDialog.vue",
+        "apps/web/src/views/ProjectsView.vue",
+        "apps/web/src/components/ui/dialog/**",
+        "apps/web/src/components/ui/textarea/**",
+        "apps/web/src/style.css",
+        "packages/shared/src/dto/project.dto.ts"
+      ],
+      "lastReconciledPR": null,
+      "lastReconciledAt": null
     }
   ]
 }
