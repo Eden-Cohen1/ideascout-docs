@@ -75,6 +75,7 @@
       "docPath": "docs/architecture/frontend-verify-gate.md",
       "title": "Frontend verification gate and testing reference",
       "sourceGlobs": [
+        ".claude/skills/frontend-task/**",
         ".claude/skills/frontend-verify/**",
         ".claude/skills/frontend-task/SKILL.md",
         ".claude/skills/frontend-task/references/testing.md"
