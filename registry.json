@@ -26,6 +26,18 @@
       "lastReconciledAt": "2026-07-11T00:57:57Z"
     },
     {
+      "docPath": "docs/architecture/auth-session-layer.md",
+      "title": "Auth API module and Pinia auth store",
+      "sourceGlobs": [
+        "apps/web/src/api/auth.api.ts",
+        "apps/web/src/stores/auth.store.ts",
+        "apps/web/src/lib/errors.ts",
+        "apps/web/src/lib/notify.ts"
+      ],
+      "lastReconciledPR": 29,
+      "lastReconciledAt": "2026-07-12T11:11:41Z"
+    },
+    {
       "docPath": "docs/architecture/web-verification-gate.md",
       "title": "Web verification gate and design-token enforcement",
       "sourceGlobs": [
