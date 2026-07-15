@@ -175,6 +175,18 @@
       ],
       "lastReconciledPR": 45,
       "lastReconciledAt": "2026-07-15T05:41:23Z"
+    },
+    {
+      "docPath": "docs/architecture/repo-agent-scaffolding.md",
+      "title": "Repo agent scaffolding",
+      "sourceGlobs": [
+        ".claude/skills/**",
+        "CLAUDE.md",
+        "CONTEXT-MAP.md",
+        "docs/agents/**"
+      ],
+      "lastReconciledPR": 44,
+      "lastReconciledAt": "2026-07-14T19:47:11Z"
     }
   ]
 }
