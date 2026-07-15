@@ -26,6 +26,33 @@
       "lastReconciledAt": "2026-07-11T00:57:57Z"
     },
     {
+      "docPath": "docs/architecture/auth-session-layer.md",
+      "title": "Auth API module and Pinia auth store",
+      "sourceGlobs": [
+        "apps/web/src/api/auth.api.ts",
+        "apps/web/src/stores/auth.store.ts",
+        "apps/web/src/lib/errors.ts",
+        "apps/web/src/lib/notify.ts"
+      ],
+      "lastReconciledPR": 29,
+      "lastReconciledAt": "2026-07-12T11:11:41Z"
+    },
+    {
+      "docPath": "docs/architecture/web-verification-gate.md",
+      "title": "Web verification gate and design-token enforcement",
+      "sourceGlobs": [
+        "package.json",
+        "apps/web/package.json",
+        "apps/web/scripts/token-lint.mjs",
+        "apps/web/DESIGN.md",
+        "eslint.config.mjs",
+        ".github/workflows/ci.yml",
+        "apps/web/src/**/*.vue"
+      ],
+      "lastReconciledPR": 31,
+      "lastReconciledAt": "2026-07-12T11:52:04Z"
+    },
+    {
       "docPath": "docs/architecture/signal-source-stack.md",
       "title": "Signal source stack",
       "sourceGlobs": [
@@ -43,6 +70,61 @@
       ],
       "lastReconciledPR": null,
       "lastReconciledAt": null
+    },
+    {
+      "docPath": "docs/architecture/frontend-verify-gate.md",
+      "title": "Frontend verification gate and testing reference",
+      "sourceGlobs": [
+        ".claude/skills/frontend-task/**",
+        ".claude/skills/frontend-verify/**",
+        ".claude/skills/frontend-task/SKILL.md",
+        ".claude/skills/frontend-task/references/testing.md"
+      ],
+      "lastReconciledPR": 32,
+      "lastReconciledAt": "2026-07-12T11:52:10Z"
+    },
+    {
+      "docPath": "docs/architecture/project-creation-from-dashboard.md",
+      "title": "Project creation from the dashboard",
+      "sourceGlobs": [
+        "apps/web/src/components/CreateProjectDialog.vue",
+        "apps/web/src/views/ProjectsView.vue",
+        "apps/web/src/components/ui/dialog/**",
+        "apps/web/src/components/ui/textarea/**",
+        "apps/web/src/style.css",
+        "packages/shared/src/dto/project.dto.ts"
+      ],
+      "lastReconciledPR": null,
+      "lastReconciledAt": null
+    },
+    {
+      "docPath": "docs/guides/authentication.md",
+      "title": "Authentication flow",
+      "sourceGlobs": [
+        "apps/web/src/views/LoginView.vue",
+        "apps/web/src/views/RegisterView.vue",
+        "apps/web/src/router/index.ts",
+        "apps/web/src/lib/auth-schemas.ts",
+        "apps/web/src/lib/redirect.ts",
+        "apps/web/src/lib/validation.ts",
+        "apps/web/src/lib/errors.ts",
+        "packages/shared/src/dto/auth.dto.ts"
+      ],
+      "lastReconciledPR": 35,
+      "lastReconciledAt": "2026-07-12T14:38:25Z"
+    },
+    {
+      "docPath": "docs/architecture/app-shell.md",
+      "title": "Authenticated app shell and logout chrome",
+      "sourceGlobs": [
+        "apps/web/src/App.vue",
+        "apps/web/src/App.spec.ts",
+        "apps/web/src/components/AppShell.vue",
+        "apps/web/src/components/AppShell.spec.ts",
+        "apps/web/src/views/HomeView.vue"
+      ],
+      "lastReconciledPR": 36,
+      "lastReconciledAt": "2026-07-12T15:24:18Z"
     },
     {
       "docPath": "docs/architecture/email-service.md",

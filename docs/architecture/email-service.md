@@ -45,6 +45,8 @@ user-facing behavior, and unblocks the later verification/reset flows.
 
 - If `EMAIL_PROVIDER` is misspelled or its credentials are missing, the registry logs a warning and
   falls back to `mock`.
+- The template escapes all interpolated content, so callers pass plain text (never markup) — a
+  value like `<script>` is rendered as inert text, not injected into the HTML email.
 - `MockEmailAdapter` keeps only the most recent 100 captured messages in memory.
 - `ResendEmailAdapter` uses the API directly; the account still needs a verified sending domain for
   unrestricted delivery.
