@@ -5,6 +5,7 @@
 {"ts":"2026-07-12T11:56:31Z","pr":30,"event":"no-change","outcome":"no-change","docPath":null,"proposalPr":null,"approvedBy":null,"note":"Merged PR only added vitest config and tests; no canonical docs impact."}
 {"ts":"2026-07-12T14:49:01Z","pr":35,"event":"proposed","outcome":"new-doc","docPath":"docs/guides/authentication.md","proposalPr":13,"threadTs":"1783867727.668589","note":"draft proposal opened"}
 {"ts":"2026-07-12T15:24:18Z","pr":36,"event":"proposed","outcome":"new-doc","docPath":"docs/architecture/app-shell.md","proposalPr":14,"threadTs":"1783869842.496629","note":"draft proposal opened"}
+{"ts":"2026-07-12T18:51:37Z","pr":37,"event":"proposed","outcome":"new-doc","docPath":"docs/architecture/email-service.md","proposalPr":16,"threadTs":"1783882292.114399","note":"draft proposal opened"}
 {"ts": "2026-07-13T09:54:13Z", "pr": 32, "event": "published", "outcome": "update-doc", "proposalPr": 10, "approvedBy": "github-merge", "note": "merged on GitHub"}
 {"ts": "2026-07-13T09:55:52Z", "pr": 31, "event": "published", "outcome": "update-doc", "proposalPr": 11, "approvedBy": "github-merge", "note": "merged on GitHub"}
 {"ts":"2026-07-15T16:49:55Z","pr":48,"event":"proposed","outcome":"new-doc","docPath":"docs/architecture/project-creation-from-dashboard.md","proposalPr":26,"threadTs":"1784134187.534539","note":"draft proposal opened"}

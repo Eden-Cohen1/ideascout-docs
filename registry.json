@@ -125,6 +125,22 @@
       ],
       "lastReconciledPR": 36,
       "lastReconciledAt": "2026-07-12T15:24:18Z"
+    },
+    {
+      "docPath": "docs/architecture/email-service.md",
+      "title": "Transactional email service",
+      "sourceGlobs": [
+        "apps/api/src/config/config.schema.ts",
+        "apps/api/src/config/config.service.ts",
+        "apps/api/src/modules/email/**",
+        "apps/api/src/worker.ts",
+        "apps/api/package.json",
+        "docker-compose.override.yml",
+        ".env.example",
+        "package-lock.json"
+      ],
+      "lastReconciledPR": 37,
+      "lastReconciledAt": "2026-07-12T18:46:57Z"
     }
   ]
 }
