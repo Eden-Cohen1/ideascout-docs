@@ -72,6 +72,25 @@
       "lastReconciledAt": null
     },
     {
+      "docPath": "docs/architecture/auth-token-foundation.md",
+      "title": "Auth token foundation for verification and reset",
+      "sourceGlobs": [
+        "apps/api/prisma/migrations/**",
+        "apps/api/prisma/schema.prisma",
+        "apps/api/src/config/**",
+        "apps/api/src/modules/auth/auth-token.service.ts",
+        "apps/api/src/modules/auth/auth-token.service.spec.ts",
+        "apps/api/src/modules/auth/auth.controller.ts",
+        "apps/api/src/modules/auth/auth.module.ts",
+        "apps/api/src/modules/auth/auth.service.ts",
+        "apps/api/src/modules/auth/auth.service.spec.ts",
+        "packages/shared/src/dto/auth.dto.ts",
+        "packages/shared/src/enums.ts"
+      ],
+      "lastReconciledPR": null,
+      "lastReconciledAt": null
+    },
+    {
       "docPath": "docs/architecture/frontend-verify-gate.md",
       "title": "Frontend verification gate and testing reference",
       "sourceGlobs": [
