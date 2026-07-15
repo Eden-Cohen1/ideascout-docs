@@ -26,6 +26,18 @@
       "lastReconciledAt": "2026-07-11T00:57:57Z"
     },
     {
+      "docPath": "docs/architecture/auth-session-layer.md",
+      "title": "Auth API module and Pinia auth store",
+      "sourceGlobs": [
+        "apps/web/src/api/auth.api.ts",
+        "apps/web/src/stores/auth.store.ts",
+        "apps/web/src/lib/errors.ts",
+        "apps/web/src/lib/notify.ts"
+      ],
+      "lastReconciledPR": 29,
+      "lastReconciledAt": "2026-07-12T11:11:41Z"
+    },
+    {
       "docPath": "docs/architecture/web-verification-gate.md",
       "title": "Web verification gate and design-token enforcement",
       "sourceGlobs": [
@@ -60,15 +72,121 @@
       "lastReconciledAt": null
     },
     {
+      "docPath": "docs/architecture/auth-token-foundation.md",
+      "title": "Auth token foundation for verification and reset",
+      "sourceGlobs": [
+        "apps/api/prisma/migrations/**",
+        "apps/api/prisma/schema.prisma",
+        "apps/api/src/config/**",
+        "apps/api/src/modules/auth/auth-token.service.ts",
+        "apps/api/src/modules/auth/auth-token.service.spec.ts",
+        "apps/api/src/modules/auth/auth.controller.ts",
+        "apps/api/src/modules/auth/auth.module.ts",
+        "apps/api/src/modules/auth/auth.service.ts",
+        "apps/api/src/modules/auth/auth.service.spec.ts",
+        "packages/shared/src/dto/auth.dto.ts",
+        "packages/shared/src/enums.ts"
+      ],
+      "lastReconciledPR": null,
+      "lastReconciledAt": null
+    },
+    {
       "docPath": "docs/architecture/frontend-verify-gate.md",
       "title": "Frontend verification gate and testing reference",
       "sourceGlobs": [
+        ".claude/skills/frontend-task/**",
         ".claude/skills/frontend-verify/**",
         ".claude/skills/frontend-task/SKILL.md",
-        ".claude/skills/frontend-task/references/testing.md"
+        ".claude/skills/frontend-task/references/testing.md",
+        ".claude/skills/frontend-task/references/performance.md"
       ],
-      "lastReconciledPR": 32,
-      "lastReconciledAt": "2026-07-12T11:52:10Z"
+      "lastReconciledPR": 41,
+      "lastReconciledAt": "2026-07-13T12:43:06Z"
+    },
+    {
+      "docPath": "docs/architecture/project-creation-from-dashboard.md",
+      "title": "Project creation from the dashboard",
+      "sourceGlobs": [
+        "apps/web/src/components/CreateProjectDialog.vue",
+        "apps/web/src/views/ProjectsView.vue",
+        "apps/web/src/components/ui/dialog/**",
+        "apps/web/src/components/ui/textarea/**",
+        "apps/web/src/style.css",
+        "packages/shared/src/dto/project.dto.ts"
+      ],
+      "lastReconciledPR": null,
+      "lastReconciledAt": null
+    },
+    {
+      "docPath": "docs/guides/authentication.md",
+      "title": "Authentication flow",
+      "sourceGlobs": [
+        "apps/web/src/views/LoginView.vue",
+        "apps/web/src/views/RegisterView.vue",
+        "apps/web/src/router/index.ts",
+        "apps/web/src/lib/auth-schemas.ts",
+        "apps/web/src/lib/redirect.ts",
+        "apps/web/src/lib/validation.ts",
+        "apps/web/src/lib/errors.ts",
+        "packages/shared/src/dto/auth.dto.ts"
+      ],
+      "lastReconciledPR": 35,
+      "lastReconciledAt": "2026-07-12T14:38:25Z"
+    },
+    {
+      "docPath": "docs/architecture/app-shell.md",
+      "title": "Authenticated app shell and logout chrome",
+      "sourceGlobs": [
+        "apps/web/src/App.vue",
+        "apps/web/src/App.spec.ts",
+        "apps/web/src/components/AppShell.vue",
+        "apps/web/src/components/AppShell.spec.ts",
+        "apps/web/src/views/HomeView.vue"
+      ],
+      "lastReconciledPR": 36,
+      "lastReconciledAt": "2026-07-12T15:24:18Z"
+    },
+    {
+      "docPath": "docs/architecture/email-service.md",
+      "title": "Transactional email service",
+      "sourceGlobs": [
+        "apps/api/src/config/config.schema.ts",
+        "apps/api/src/config/config.service.ts",
+        "apps/api/src/modules/email/**",
+        "apps/api/src/worker.ts",
+        "apps/api/package.json",
+        "docker-compose.override.yml",
+        ".env.example",
+        "package-lock.json"
+      ],
+      "lastReconciledPR": 37,
+      "lastReconciledAt": "2026-07-12T18:46:57Z"
+    },
+    {
+      "docPath": "docs/architecture/projects-data-layer.md",
+      "title": "Projects data layer",
+      "sourceGlobs": [
+        "apps/web/src/api/projects.api.ts",
+        "apps/web/src/stores/projects.store.ts",
+        "apps/web/src/api/client.ts",
+        "apps/web/src/lib/errors.ts",
+        "packages/shared/src/dto/project.dto.ts",
+        "packages/shared/src/dto/pagination.ts"
+      ],
+      "lastReconciledPR": 45,
+      "lastReconciledAt": "2026-07-15T05:41:23Z"
+    },
+    {
+      "docPath": "docs/architecture/repo-agent-scaffolding.md",
+      "title": "Repo agent scaffolding",
+      "sourceGlobs": [
+        ".claude/skills/**",
+        "CLAUDE.md",
+        "CONTEXT-MAP.md",
+        "docs/agents/**"
+      ],
+      "lastReconciledPR": 44,
+      "lastReconciledAt": "2026-07-14T19:47:11Z"
     },
     {
       "docPath": "docs/architecture/projects-pagination.md",
