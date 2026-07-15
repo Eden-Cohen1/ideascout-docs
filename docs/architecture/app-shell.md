@@ -27,8 +27,10 @@ public auth screens clean.
 - Logout reuses the existing auth store, then redirects to `/login`.
 - While logout is in flight, the button is disabled and shows `Signing out…` so repeated clicks
   are ignored.
-- `apps/web/src/views/HomeView.vue` now sits inside the shell's `<main>` and uses design tokens
-  instead of the previous full-screen layout.
+- Routed pages render inside the shell's `<main>` and style with design tokens rather than owning
+  a full-screen layout. PR #36 migrated `HomeView.vue` this way; the `/` landing view has since
+  been replaced by the projects dashboard (documented separately), but the shell-wrapping contract
+  described here is unchanged.
 - `apps/web/src/App.spec.ts` and `apps/web/src/components/AppShell.spec.ts` cover the shell
   contract: authenticated wrapping, public routes staying bare, display-label fallback,
   logout redirect, and the in-flight guard.
