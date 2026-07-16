@@ -1,6 +1,6 @@
 ---
 id: authentication-slice
-title: Authentication slice: verification, reset, and Google sign-in
+title: "Authentication slice: verification, reset, and Google sign-in"
 sidebar_position: 6
 ---
 
