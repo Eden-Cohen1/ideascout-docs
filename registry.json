@@ -199,6 +199,26 @@
       ],
       "lastReconciledPR": 42,
       "lastReconciledAt": "2026-07-14T20:01:06Z"
+    },
+    {
+      "docPath": "docs/architecture/projects-dashboard.md",
+      "title": "Projects dashboard and infinite scroll",
+      "sourceGlobs": [
+        "apps/web/src/api/projects.api.ts",
+        "apps/web/src/components/ProjectCard.vue",
+        "apps/web/src/components/ProjectCardSkeleton.vue",
+        "apps/web/src/composables/useInfiniteScroll.ts",
+        "apps/web/src/composables/useInfiniteScroll.spec.ts",
+        "apps/web/src/router/index.ts",
+        "apps/web/src/stores/projects.store.ts",
+        "apps/web/src/stores/projects.store.spec.ts",
+        "apps/web/src/views/HomeView.vue",
+        "apps/web/src/views/ProjectDetailView.vue",
+        "apps/web/src/views/ProjectsView.vue",
+        "apps/web/src/views/ProjectsView.spec.ts"
+      ],
+      "lastReconciledPR": 45,
+      "lastReconciledAt": "2026-07-15T05:41:23Z"
     }
   ]
 }
