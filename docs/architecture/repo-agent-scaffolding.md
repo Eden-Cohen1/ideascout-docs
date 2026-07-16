@@ -53,9 +53,20 @@ personal setup.
 
 ## Why
 
-The PR turns a screenshot checklist into a standing repo convention so reviewers can see
-all visual states without checking out the branch, and so the Linear issue can carry the
-visual record too.
+The stated goal (source PR #44) is to make the repo's own skills and the vendored Matt Pocock
+skills read as **one coherent system with a single clear choice per task** — resolving name
+collisions (notably `code-review` → `spec-review`), demoting directly-competing tools to
+slash-only, and adding the task→skill map plus cross-referenced boundaries so neither the model
+nor a person is left guessing which skill to reach for. Vendoring the skills into the repo
+(source PR #43) keeps that guidance versioned with the codebase rather than in a personal setup.
+
+PR #46 extends the same discipline to review evidence: it turns per-state screenshots into a
+standing convention so a reviewer sees every visual state (and its failure modes) without
+checking out the branch, and the Linear issue carries the visual record too.
+
+Open question: none of the #43/#44 skills work or #46 links a Linear issue, so there is no
+tracked initiative to point at for the longer-term intent — worth a human confirmation before
+publish, but the changes are well-motivated in the PR descriptions.
 
 ## Edge cases & gotchas
 
