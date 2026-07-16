@@ -118,6 +118,27 @@
       "lastReconciledAt": null
     },
     {
+      "docPath": "docs/architecture/authentication-slice.md",
+      "title": "Authentication slice: verification, reset, and Google sign-in",
+      "sourceGlobs": [
+        ".env.example",
+        "apps/api/prisma/**",
+        "apps/api/src/app.module.ts",
+        "apps/api/src/common/current-user.decorator.ts",
+        "apps/api/src/common/jwt-auth.guard.*",
+        "apps/api/src/common/verified-email.guard.*",
+        "apps/api/src/config/**",
+        "apps/api/src/modules/auth/**",
+        "apps/api/src/modules/oauth/**",
+        "apps/api/src/modules/research/research.controller.ts",
+        "apps/api/src/modules/users/**",
+        "packages/shared/src/api-routes.ts",
+        "packages/shared/src/dto/auth.dto.ts"
+      ],
+      "lastReconciledPR": null,
+      "lastReconciledAt": null
+    },
+    {
       "docPath": "docs/guides/authentication.md",
       "title": "Authentication flow",
       "sourceGlobs": [
