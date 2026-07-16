@@ -6,10 +6,10 @@ sidebar_position: 6
 
 # Repo agent scaffolding
 
-This page documents the repo-local agent guidance added in ideascout PR #43 and refined in
-PR #44: the vendored `.claude/skills/` tree, the top-level `CLAUDE.md`, the root
-`CONTEXT-MAP.md`, the static `docs/agents/skills-map.md` guide, and the `docs/agents/`
-guidance pages.
+This page documents the repo-local agent guidance added in ideascout PR #43, refined in
+PR #44, and tightened in PR #46: the vendored `.claude/skills/` tree, the top-level
+`CLAUDE.md`, the root `CONTEXT-MAP.md`, the static `docs/agents/skills-map.md` guide, and
+the `docs/agents/` guidance pages.
 
 ## Purpose
 
@@ -47,6 +47,9 @@ personal setup.
 - The skill set itself was reshuffled so the repo has one clear choice per task: `spec-review`
   now names standards + spec conformance, while a few overlapping tools were pushed to
   slash-only use.
+- PR #46 tightened the frontend guidance again: `frontend-task` now requires a screenshot of
+  every visual state, and `frontend-verify` now records that screenshot coverage in the
+  verdict block.
 
 ## Why
 
@@ -57,9 +60,13 @@ slash-only, and adding the task→skill map plus cross-referenced boundaries so 
 nor a person is left guessing which skill to reach for. Vendoring the skills into the repo
 (source PR #43) keeps that guidance versioned with the codebase rather than in a personal setup.
 
-Open question: neither PR links a Linear issue, so there is no tracked initiative to point at
-for the longer-term intent — worth a human confirmation before publish, but the change itself is
-well-motivated in the PR descriptions.
+PR #46 extends the same discipline to review evidence: it turns per-state screenshots into a
+standing convention so a reviewer sees every visual state (and its failure modes) without
+checking out the branch, and the Linear issue carries the visual record too.
+
+Open question: none of the #43/#44 skills work or #46 links a Linear issue, so there is no
+tracked initiative to point at for the longer-term intent — worth a human confirmation before
+publish, but the changes are well-motivated in the PR descriptions.
 
 ## Edge cases & gotchas
 
@@ -70,10 +77,13 @@ well-motivated in the PR descriptions.
   Issues.
 - The vendored skills are repo content, but this page should not try to summarize each skill's
   behavior individually.
+- If a visual state cannot be captured in a screenshot, the PR should say so explicitly
+  rather than silently omitting it.
 
 ## References
 
-- Source PR: https://github.com/Eden-Cohen1/ideascout/pull/44
-- Prior source PR: https://github.com/Eden-Cohen1/ideascout/pull/43
+- Source PR: https://github.com/Eden-Cohen1/ideascout/pull/46
+- Prior source PRs: https://github.com/Eden-Cohen1/ideascout/pull/44 and
+  https://github.com/Eden-Cohen1/ideascout/pull/43
 
-<!-- provenance: drafted from ideascout PR #44 -->
+<!-- provenance: drafted from ideascout PR #46 -->

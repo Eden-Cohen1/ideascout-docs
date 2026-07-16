@@ -13,6 +13,7 @@
 {"ts":"2026-07-13T13:26:41Z","pr":40,"event":"proposed","outcome":"new-doc","docPath":"docs/architecture/projects-data-layer.md","proposalPr":19,"threadTs":"1783949194.311199","note":"draft proposal opened"}
 {"ts":"2026-07-14T19:49:54Z","pr":44,"event":"proposed","outcome":"update-doc","docPath":"docs/architecture/repo-agent-scaffolding.md","proposalPr":21,"threadTs":"1784058626.374349","note":"draft proposal opened"}
 {"ts":"2026-07-14T20:03:51Z","pr":42,"event":"proposed","outcome":"new-doc","docPath":"docs/architecture/projects-pagination.md","proposalPr":22,"threadTs":"1784059421.898639","note":"draft proposal opened"}
+{"ts":"2026-07-14T20:59:05Z","pr":46,"event":"proposed","outcome":"update-doc","docPath":"docs/architecture/repo-agent-scaffolding.md","proposalPr":23,"threadTs":"1784062864.779969","note":"draft proposal opened"}
 {"ts":"2026-07-15T16:49:55Z","pr":48,"event":"proposed","outcome":"new-doc","docPath":"docs/architecture/project-creation-from-dashboard.md","proposalPr":26,"threadTs":"1784134187.534539","note":"draft proposal opened"}
 {"ts": "2026-07-15T18:02:23Z", "pr": 48, "event": "published", "outcome": "new-doc", "proposalPr": 26, "approvedBy": "github-merge", "note": "merged on GitHub"}
 {"ts": "2026-07-15T18:44:59Z", "pr": 29, "event": "published", "outcome": "update-doc", "proposalPr": 9, "approvedBy": "github-merge", "note": "merged on GitHub"}
