@@ -49,8 +49,8 @@
         ".github/workflows/ci.yml",
         "apps/web/src/**/*.vue"
       ],
-      "lastReconciledPR": 31,
-      "lastReconciledAt": "2026-07-12T11:52:04Z"
+      "lastReconciledPR": 47,
+      "lastReconciledAt": "2026-07-15T05:45:46Z"
     },
     {
       "docPath": "docs/architecture/signal-source-stack.md",
