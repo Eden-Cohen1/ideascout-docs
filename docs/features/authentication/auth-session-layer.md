@@ -1,7 +1,7 @@
 ---
 id: auth-session-layer
 title: Auth API module and Pinia auth store
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # Auth API module and Pinia auth store

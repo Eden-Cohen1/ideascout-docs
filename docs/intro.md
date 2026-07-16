@@ -13,10 +13,15 @@ Hermes docs agent: when a pull request merges into
 whether the docs need to change and, if so, opens a documentation pull request here for
 human review before anything is published.
 
+Browse the docs by product area: **Authentication**, **Workspaces**, **Research**, and
+**Platform**.
+
 ## How this works
 
 - Every page under **Docs** is plain Markdown committed to the
   [`ideascout-docs`](https://github.com/Eden-Cohen1/ideascout-docs) repository.
+- Pages are grouped by feature so related flows live together instead of being buried in a
+  single architecture bucket.
 - Changes arrive as pull requests on `proposal/*` branches. Vercel builds a **preview** of
   each proposal so you can read the rendered page before it merges.
 - A page only reaches production after a human approves it in Slack (`#docs-agent`) and the

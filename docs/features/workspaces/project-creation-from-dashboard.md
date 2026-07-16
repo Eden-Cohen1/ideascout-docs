@@ -1,7 +1,7 @@
 ---
 id: project-creation-from-dashboard
 title: Project creation from the dashboard
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 # Project creation from the dashboard

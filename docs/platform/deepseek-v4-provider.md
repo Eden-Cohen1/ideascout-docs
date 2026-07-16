@@ -1,7 +1,7 @@
 ---
 id: deepseek-v4-provider
 title: DeepSeek V4 provider
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # DeepSeek V4 provider

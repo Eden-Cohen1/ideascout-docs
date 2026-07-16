@@ -1,7 +1,7 @@
 ---
 id: depth-quality-spike
 title: 2BU-19 search-depth spike results
-sidebar_position: 4
+sidebar_position: 2
 ---
 
 # 2BU-19 search-depth spike results

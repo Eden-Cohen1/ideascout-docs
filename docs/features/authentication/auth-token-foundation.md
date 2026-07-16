@@ -1,7 +1,7 @@
 ---
 id: auth-token-foundation
 title: Auth token foundation for verification and reset
-sidebar_position: 5
+sidebar_position: 3
 ---
 
 # Auth token foundation for verification and reset

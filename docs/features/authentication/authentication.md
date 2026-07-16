@@ -1,7 +1,7 @@
 ---
 id: authentication
 title: Authentication flow
-sidebar_position: 50
+sidebar_position: 1
 ---
 
 # Authentication flow
@@ -46,6 +46,6 @@ and OAuth out of scope, so this page only documents the in-app email/password fl
 
 ## Related
 
-- [Documentation home](../intro.md)
+- [Documentation home](/)
 
 <!-- provenance: derived from PR #35 (Add Login and Register views), reconciled 2026-07-12 -->

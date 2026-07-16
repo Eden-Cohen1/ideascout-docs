@@ -1,7 +1,7 @@
 ---
 id: projects-dashboard
 title: Projects dashboard and infinite scroll
-sidebar_position: 5
+sidebar_position: 3
 ---
 
 # Projects dashboard and infinite scroll

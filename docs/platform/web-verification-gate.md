@@ -1,7 +1,7 @@
 ---
 id: web-verification-gate
 title: Web verification gate and design-token enforcement
-sidebar_position: 4
+sidebar_position: 6
 ---
 
 # Web verification gate and design-token enforcement
