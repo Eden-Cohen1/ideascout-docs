@@ -31,5 +31,6 @@
 {"ts": "2026-07-16T09:29:44Z", "pr": 46, "event": "published", "outcome": "update-doc", "proposalPr": 23, "approvedBy": "github-merge", "note": "merged on GitHub"}
 {"ts": "2026-07-16T09:48:26Z", "pr": 47, "event": "published", "outcome": "update-doc", "proposalPr": 24, "approvedBy": "github-merge", "note": "merged on GitHub"}
 {"ts": "2026-07-16T09:53:47Z", "pr": 45, "event": "published", "outcome": "new-doc", "proposalPr": 25, "approvedBy": "github-merge", "note": "merged on GitHub"}
+{"ts": "2026-07-16T10:01:23Z","pr":50,"event":"proposed","outcome":"new-doc","docPath":"docs/architecture/authentication-slice.md","proposalPr":27,"threadTs":"1784196075.338509","note":"draft proposal opened"}
 {"ts": "2026-07-16T17:17:57Z", "pr": 38, "event": "published", "outcome": "update-doc", "proposalPr": 15, "approvedBy": "github-merge", "note": "merged on GitHub"}
 {"ts": "2026-07-16T17:19:35Z", "pr": 28, "event": "published", "outcome": "update-doc", "proposalPr": 8, "approvedBy": "github-merge", "note": "merged on GitHub"}
