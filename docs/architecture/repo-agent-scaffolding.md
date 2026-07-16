@@ -6,9 +6,10 @@ sidebar_position: 6
 
 # Repo agent scaffolding
 
-This page documents the repo-local agent guidance added in ideascout PR #43: the vendored
-`.claude/skills/` tree, the top-level `CLAUDE.md`, the root `CONTEXT-MAP.md`, and the
-`docs/agents/` guidance pages.
+This page documents the repo-local agent guidance added in ideascout PR #43, refined in
+PR #44, and tightened in PR #46: the vendored `.claude/skills/` tree, the top-level
+`CLAUDE.md`, the root `CONTEXT-MAP.md`, the static `docs/agents/skills-map.md` guide, and
+the `docs/agents/` guidance pages.
 
 ## Purpose
 
@@ -34,13 +35,38 @@ personal setup.
   before the target file does.
 - The vendored `.claude/skills/` directory makes the team skill set live in the repo instead
   of only in a personal workspace.
+- `docs/agents/skills-map.md` is the static task→skill map. It splits the repo's skills into
+  auto skills and slash-only skills, and it points people to `/ask-matt` when they need the
+  router to decide.
+- `CLAUDE.md` now points at that map and gives the short rule of thumb for the main splits:
+  `apps/web` work → `frontend-task` / `frontend-verify`; backend / `packages/shared` /
+  infra → `/implement`; issue authoring → `linear-issue`.
+- `/ask-matt` was expanded with the repo's project-specific skill boundaries so the router
+  can surface the right choice instead of leaving the generic and repo-local skills blurred
+  together.
+- The skill set itself was reshuffled so the repo has one clear choice per task: `spec-review`
+  now names standards + spec conformance, while a few overlapping tools were pushed to
+  slash-only use.
+- PR #46 tightened the frontend guidance again: `frontend-task` now requires a screenshot of
+  every visual state, and `frontend-verify` now records that screenshot coverage in the
+  verdict block.
 
 ## Why
 
-Open question: the PR does not include a linked Linear issue or another explicit rationale for
-why these agent instructions were vendored into the repo. The doc can safely say what changed,
-but the business reason for preserving this setup in canonical docs still needs confirmation
-before publish.
+The stated goal (source PR #44) is to make the repo's own skills and the vendored Matt Pocock
+skills read as **one coherent system with a single clear choice per task** — resolving name
+collisions (notably `code-review` → `spec-review`), demoting directly-competing tools to
+slash-only, and adding the task→skill map plus cross-referenced boundaries so neither the model
+nor a person is left guessing which skill to reach for. Vendoring the skills into the repo
+(source PR #43) keeps that guidance versioned with the codebase rather than in a personal setup.
+
+PR #46 extends the same discipline to review evidence: it turns per-state screenshots into a
+standing convention so a reviewer sees every visual state (and its failure modes) without
+checking out the branch, and the Linear issue carries the visual record too.
+
+Open question: none of the #43/#44 skills work or #46 links a Linear issue, so there is no
+tracked initiative to point at for the longer-term intent — worth a human confirmation before
+publish, but the changes are well-motivated in the PR descriptions.
 
 ## Edge cases & gotchas
 
@@ -51,9 +77,13 @@ before publish.
   Issues.
 - The vendored skills are repo content, but this page should not try to summarize each skill's
   behavior individually.
+- If a visual state cannot be captured in a screenshot, the PR should say so explicitly
+  rather than silently omitting it.
 
 ## References
 
-- Source PR: https://github.com/Eden-Cohen1/ideascout/pull/43
+- Source PR: https://github.com/Eden-Cohen1/ideascout/pull/46
+- Prior source PRs: https://github.com/Eden-Cohen1/ideascout/pull/44 and
+  https://github.com/Eden-Cohen1/ideascout/pull/43
 
-<!-- provenance: drafted from ideascout PR #43 -->
+<!-- provenance: drafted from ideascout PR #46 -->

@@ -6,7 +6,7 @@ sidebar_position: 3
 
 # Signal source stack
 
-This page documents the signal-source adapter layer introduced in ideascout PR #24 and the resilience hardening shipped in PR #27.
+This page documents the signal-source adapter layer introduced in ideascout PR #24, the resilience hardening shipped in PR #27, and the prompt-budget / NUL-safety follow-up shipped in PR #38.
 
 ## Purpose
 
@@ -23,6 +23,10 @@ Keep non-web evidence acquisition behind a stable `SignalSource` contract so the
 - `SignalRegistry.candidateSources()` returns the available real sources. It falls back to the mock pool only when no real source is available at all.
 - Missing config for one signal source does not trigger a per-source mock fallback; it simply removes that source from the real pool.
 - `qualityTierForSignal()` assigns a fixed provenance-based quality tier to signal evidence, and `SEARCH_PRICES` tracks the signal-source ids separately from web search providers.
+- `RunBudget` now carries `perPageChars` and `perItemChars`, and the pipeline threads those caps through `competitorPrompt()` and `dimensionPrompt()` instead of relying on hidden defaults.
+- `competitorPrompt()` renders the fetched corpus with a per-page cap and trims tail pages when the rendered prompt would exceed the model-context guard.
+- `dimensionPrompt()` renders evidence with a per-item cap and trims tail evidence when the rendered prompt would exceed the model-context guard.
+- `GatherStep` strips NUL bytes from search results, fetched pages, and signal collections before they reach the prompt/store pipeline, and `structuredWithCost()` plus `saveArtifact()` do the same for LLM output and persisted artifacts.
 - `GatherStep` collects signal items, then turns each item into a synthetic `FetchedPage` plus an `EvidenceItem` so VERIFY/quote matching can see the signal text itself.
 - Signal collection is query-driven. If the fast LLM call works, each engine gets tailored queries; otherwise the source-specific `defaultQueries()` fallback is used.
 - `GatherStep` also emits a `COVERAGE` artifact after gap analysis and any bounded follow-up rounds.
@@ -38,7 +42,7 @@ Source-specific behavior:
 
 ## Why
 
-Open question: the merged source PR does not link a Linear issue, so the product rationale for the timeout and resume hardening is not documented in the source materials available to the docs agent.
+Open question: the merged source PR does not link a Linear issue, so the product rationale for the timeout/resume hardening and the prompt-budget / NUL-safety follow-up is not documented in the source materials available to the docs agent.
 
 ## Edge cases & gotchas
 
@@ -48,10 +52,15 @@ Open question: the merged source PR does not link a Linear issue, so the product
 - Signal items are stored as synthetic pages, so VERIFY and quote matching see the signal text itself.
 - Checkpoint resume is best-effort: missing or corrupt persisted artifacts force a full restart.
 - Caller cancellation is not misreported as a timeout.
+- Corpus and evidence caps are measured against the rendered prompt blocks, so prompt-format changes can shift what fits.
+- Oversized corpora and evidence sets are trimmed from the tail and marked degraded instead of failing the run.
+- `stripNul()` only recurses into plain objects, so Dates, Maps, and class instances are passed through untouched.
+- Postgres still rejects raw `0x00`, so every external ingress has to stay on the scrubbed path.
 
 ## References
 
-- Source PR: https://github.com/Eden-Cohen1/ideascout/pull/27
+- Source PR: https://github.com/Eden-Cohen1/ideascout/pull/38
+- Prior source PRs: https://github.com/Eden-Cohen1/ideascout/pull/24, https://github.com/Eden-Cohen1/ideascout/pull/27
 - Source repo: https://github.com/Eden-Cohen1/ideascout
 
-<!-- provenance: drafted from ideascout PR #27 -->
+<!-- provenance: drafted from ideascout PR #38 -->
