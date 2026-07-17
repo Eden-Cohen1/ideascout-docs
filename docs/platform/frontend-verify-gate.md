@@ -15,7 +15,7 @@ sidebar_position: 4
 - `frontend-verify` is scoped to `apps/web` work and is invoked when a frontend change needs verification before merge or handoff.
 - It runs `verify:web` first. That command is the deterministic gate for the workspace.
 - After the gate passes, the skill performs three judgment passes that scripts cannot do:
-  - UI/UX and accessibility review against `apps/web/DESIGN.md` and the `pro-graphite.html` reference, with attention to tokens-only usage, loading/empty/error/success states, keyboard reachability, visible focus, restraint, and responsive behavior.
+  - UI/UX and accessibility review against `apps/web/DESIGN.md` (the Evidence Ledger design system source of truth), with attention to tokens-only usage, loading/empty/error/success states, keyboard reachability, visible focus, restraint, and responsive behavior.
   - Architecture review for downward-only layering and centralized error handling, while composing `/code-review` instead of duplicating it.
   - Performance and scalability review for bounded list and payload size, pagination or incremental render where needed, cache/revisit behavior, request cancellation, leaked observers/listeners, and avoiding premature virtualization for realistically small lists.
 - `frontend-task/references/testing.md` captures the testing baseline for `apps/web`: store actions, error paths, composables, and component states. It also standardizes colocated specs and the Vitest/Vue Test Utils style.
