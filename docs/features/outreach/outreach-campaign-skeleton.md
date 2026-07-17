@@ -25,6 +25,9 @@ PR #52 adds the first outreach slice: founders can create a validation campaign 
   - Campaign creation checks that the idea belongs to the same project; missing or cross-project ideas return 404.
   - Responses include the idea title plus created/updated timestamps.
   - The Prisma model stores the campaign, its project and idea foreign keys, lifecycle state, and max-contact bound.
+- Seed fixture:
+  - `prisma db seed` now creates or refreshes a demo founder account (`demo@ideascout.local` / `demo-password-123`) with a verified email, a demo project, a demo idea, and a draft outreach campaign.
+  - The seeded campaign is sufficient to open Outreach on a fresh clone without hand-made fixtures.
 - Web:
   - The app shell now exposes an Outreach route.
   - `OutreachView` shows the campaign list and a new-campaign panel.
@@ -43,12 +46,15 @@ This is the steel thread for the phase-2 outreach flow described in 2BU-47 and 2
 - Campaign routes are nested under projects, so access depends on project ownership rather than a campaign-specific guard.
 - Creating a campaign for an idea in another project returns 404, not 403.
 - The shared lifecycle enum already includes future states even though this slice only emits `DRAFT`.
+- `prisma db seed` is idempotent; rerunning it refreshes the demo password hash and reuses the same demo records when they already exist.
+- The demo login is dev-only fixture data, not production data.
 - This PR does not implement persona discovery, contact discovery, interview flows, or any state transitions beyond `DRAFT`.
 
 ## References
 
 - Source PR: https://github.com/Eden-Cohen1/ideascout/pull/52
+- Source PR: https://github.com/Eden-Cohen1/ideascout/pull/54
 - Linear issue: https://linear.app/2builders/issue/2BU-48/outreach-campaign-skeleton-create-a-validation-campaign-from-an
 - Parent spec: https://linear.app/2builders/issue/2BU-47/spec-outreach-and-ai-interview-validation-loop-phase-2-recruit-real
 
-<!-- provenance: drafted from ideascout PR #52 -->
+<!-- provenance: drafted from ideascout PR #52, updated for PR #54 -->
