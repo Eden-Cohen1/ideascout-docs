@@ -1,7 +1,7 @@
 ---
 id: signal-source-stack
 title: Signal source stack
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 # Signal source stack

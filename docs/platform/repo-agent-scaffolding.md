@@ -1,7 +1,7 @@
 ---
 id: repo-agent-scaffolding
 title: Repo agent scaffolding
-sidebar_position: 6
+sidebar_position: 5
 ---
 
 # Repo agent scaffolding

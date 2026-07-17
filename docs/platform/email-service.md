@@ -1,7 +1,7 @@
 ---
 id: email-service
 title: Transactional email service
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Transactional email service

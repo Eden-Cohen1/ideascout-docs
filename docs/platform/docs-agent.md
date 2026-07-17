@@ -1,7 +1,7 @@
 ---
 id: docs-agent
 title: Docs agent architecture
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Docs agent architecture

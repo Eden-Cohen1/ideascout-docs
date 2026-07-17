@@ -1,7 +1,7 @@
 ---
 id: projects-data-layer
 title: Projects data layer
-sidebar_position: 5
+sidebar_position: 1
 ---
 
 # Projects data layer

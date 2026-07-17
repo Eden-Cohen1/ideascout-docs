@@ -5,14 +5,17 @@
   "sourceRepo": "Eden-Cohen1/ideascout",
   "entries": [
     {
-      "docPath": "docs/architecture/docs-agent.md",
+      "docPath": "docs/platform/docs-agent.md",
       "title": "Docs agent architecture",
-      "sourceGlobs": [".hermes/**", "ops/**"],
+      "sourceGlobs": [
+        ".hermes/**",
+        "ops/**"
+      ],
       "lastReconciledPR": null,
       "lastReconciledAt": null
     },
     {
-      "docPath": "docs/architecture/deepseek-v4-provider.md",
+      "docPath": "docs/platform/deepseek-v4-provider.md",
       "title": "DeepSeek V4 provider",
       "sourceGlobs": [
         "apps/api/src/config/**",
@@ -26,7 +29,7 @@
       "lastReconciledAt": "2026-07-11T00:57:57Z"
     },
     {
-      "docPath": "docs/architecture/auth-session-layer.md",
+      "docPath": "docs/features/authentication/auth-session-layer.md",
       "title": "Auth API module and Pinia auth store",
       "sourceGlobs": [
         "apps/web/src/api/auth.api.ts",
@@ -38,7 +41,7 @@
       "lastReconciledAt": "2026-07-12T11:11:41Z"
     },
     {
-      "docPath": "docs/architecture/web-verification-gate.md",
+      "docPath": "docs/platform/web-verification-gate.md",
       "title": "Web verification gate and design-token enforcement",
       "sourceGlobs": [
         "package.json",
@@ -53,7 +56,7 @@
       "lastReconciledAt": "2026-07-15T05:45:46Z"
     },
     {
-      "docPath": "docs/architecture/signal-source-stack.md",
+      "docPath": "docs/features/research/signal-source-stack.md",
       "title": "Signal source stack",
       "sourceGlobs": [
         "apps/api/src/config/**",
@@ -79,7 +82,7 @@
       "lastReconciledAt": null
     },
     {
-      "docPath": "docs/architecture/auth-token-foundation.md",
+      "docPath": "docs/features/authentication/auth-token-foundation.md",
       "title": "Auth token foundation for verification and reset",
       "sourceGlobs": [
         "apps/api/prisma/migrations/**",
@@ -98,7 +101,7 @@
       "lastReconciledAt": null
     },
     {
-      "docPath": "docs/architecture/frontend-verify-gate.md",
+      "docPath": "docs/platform/frontend-verify-gate.md",
       "title": "Frontend verification gate and testing reference",
       "sourceGlobs": [
         ".claude/skills/frontend-task/**",
@@ -111,7 +114,7 @@
       "lastReconciledAt": "2026-07-13T12:43:06Z"
     },
     {
-      "docPath": "docs/architecture/project-creation-from-dashboard.md",
+      "docPath": "docs/features/workspaces/project-creation-from-dashboard.md",
       "title": "Project creation from the dashboard",
       "sourceGlobs": [
         "apps/web/src/components/CreateProjectDialog.vue",
@@ -125,7 +128,7 @@
       "lastReconciledAt": null
     },
     {
-      "docPath": "docs/architecture/authentication-slice.md",
+      "docPath": "docs/features/authentication/authentication-slice.md",
       "title": "Authentication slice: verification, reset, and Google sign-in",
       "sourceGlobs": [
         ".env.example",
@@ -146,7 +149,7 @@
       "lastReconciledAt": null
     },
     {
-      "docPath": "docs/guides/authentication.md",
+      "docPath": "docs/features/authentication/authentication.md",
       "title": "Authentication flow",
       "sourceGlobs": [
         "apps/web/src/views/LoginView.vue",
@@ -162,7 +165,7 @@
       "lastReconciledAt": "2026-07-12T14:38:25Z"
     },
     {
-      "docPath": "docs/architecture/app-shell.md",
+      "docPath": "docs/features/authentication/app-shell.md",
       "title": "Authenticated app shell and logout chrome",
       "sourceGlobs": [
         "apps/web/src/App.vue",
@@ -175,7 +178,7 @@
       "lastReconciledAt": "2026-07-12T15:24:18Z"
     },
     {
-      "docPath": "docs/architecture/email-service.md",
+      "docPath": "docs/platform/email-service.md",
       "title": "Transactional email service",
       "sourceGlobs": [
         "apps/api/src/config/config.schema.ts",
@@ -191,7 +194,7 @@
       "lastReconciledAt": "2026-07-12T18:46:57Z"
     },
     {
-      "docPath": "docs/architecture/projects-data-layer.md",
+      "docPath": "docs/features/workspaces/projects-data-layer.md",
       "title": "Projects data layer",
       "sourceGlobs": [
         "apps/web/src/api/projects.api.ts",
@@ -205,7 +208,7 @@
       "lastReconciledAt": "2026-07-15T05:41:23Z"
     },
     {
-      "docPath": "docs/architecture/repo-agent-scaffolding.md",
+      "docPath": "docs/platform/repo-agent-scaffolding.md",
       "title": "Repo agent scaffolding",
       "sourceGlobs": [
         ".claude/skills/**",
@@ -217,7 +220,7 @@
       "lastReconciledAt": "2026-07-14T20:59:05Z"
     },
     {
-      "docPath": "docs/architecture/projects-pagination.md",
+      "docPath": "docs/features/workspaces/projects-pagination.md",
       "title": "Projects pagination and shared page contracts",
       "sourceGlobs": [
         "apps/api/src/modules/projects/**",
@@ -229,7 +232,7 @@
       "lastReconciledAt": "2026-07-14T20:01:06Z"
     },
     {
-      "docPath": "docs/architecture/projects-dashboard.md",
+      "docPath": "docs/features/workspaces/projects-dashboard.md",
       "title": "Projects dashboard and infinite scroll",
       "sourceGlobs": [
         "apps/web/src/api/projects.api.ts",

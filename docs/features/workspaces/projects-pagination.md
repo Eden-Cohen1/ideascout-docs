@@ -1,7 +1,7 @@
 ---
 id: projects-pagination
 title: Projects pagination and shared page contracts
-sidebar_position: 5
+sidebar_position: 2
 ---
 
 # Projects pagination and shared page contracts
