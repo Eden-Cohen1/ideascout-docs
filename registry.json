@@ -250,6 +250,30 @@
       ],
       "lastReconciledPR": 45,
       "lastReconciledAt": "2026-07-15T05:41:23Z"
+    },
+    {
+      "docPath": "docs/features/outreach/outreach-campaign-skeleton.md",
+      "title": "Outreach campaign skeleton",
+      "sourceGlobs": [
+        "apps/api/prisma/schema.prisma",
+        "apps/api/prisma/migrations/**",
+        "apps/api/src/app.module.ts",
+        "apps/api/src/modules/outreach/**",
+        "apps/web/src/App.spec.ts",
+        "apps/web/src/api/campaigns.api.ts",
+        "apps/web/src/api/ideas.api.ts",
+        "apps/web/src/components/outreach/**",
+        "apps/web/src/router/index.ts",
+        "apps/web/src/stores/campaigns.store.ts",
+        "apps/web/src/stores/ideas.store.ts",
+        "apps/web/src/views/CampaignDetailView.vue",
+        "apps/web/src/views/OutreachView.vue",
+        "packages/shared/src/dto/campaign.dto.ts",
+        "packages/shared/src/enums.ts",
+        "docs/superpowers/specs/2026-07-14-outreach-market-research.md"
+      ],
+      "lastReconciledPR": null,
+      "lastReconciledAt": null
     }
   ]
 }
