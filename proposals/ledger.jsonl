@@ -40,3 +40,4 @@
 {"ts": "2026-07-16T17:52:54Z", "pr": 43, "event": "published", "outcome": "new-doc", "proposalPr": 20, "approvedBy": "github-merge", "note": "merged on GitHub"}
 {"ts": "2026-07-17T00:14:02Z", "pr": 51, "event": "published", "outcome": "update-doc", "proposalPr": 28, "approvedBy": "github-merge", "note": "merged on GitHub"}
 {"ts": "2026-07-17T10:48:48Z", "pr": 52, "event": "published", "outcome": "update-doc", "proposalPr": 29, "approvedBy": "github-merge", "note": "merged on GitHub"}
+{"ts":"2026-07-17T13:39:22Z","pr":54,"event":"proposed","outcome":"update-doc","docPath":"docs/features/outreach/outreach-campaign-skeleton.md","proposalPr":30,"threadTs":"1784295547.543969","note":"draft proposal opened"}
