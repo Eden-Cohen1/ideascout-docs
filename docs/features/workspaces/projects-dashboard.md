@@ -8,11 +8,13 @@ sidebar_position: 3
 
 ## Purpose
 
-`PR #45` replaces the landing-page placeholder with the signed-in projects dashboard. It shows project cards quickly, keeps the list bounded with cursor pagination, and fetches more results as the user scrolls.
+The signed-in projects dashboard shows project cards, keeps the list bounded with cursor pagination, and fetches more results as the user scrolls. Each card now has an actions menu (Rename / Delete) so a user can keep their workspace tidy without leaving the dashboard.
 
 ## Behavior
 
-- `/` now renders `ProjectsView` instead of `HomeView`.
+### Listing
+
+- `/` renders `ProjectsView` instead of `HomeView`.
 - The dashboard renders the same four visible states as the source PR and Linear issue describe:
   - loading skeleton cards on cold load
   - empty state for first-run workspaces
@@ -27,22 +29,56 @@ sidebar_position: 3
   - concurrent first-page callers are coalesced onto one request
   - `fetchNextPage()` appends the next page, dedupes by id, and keeps `loadMoreError` separate from the main list
 - Each project card links to `/projects/:id`.
-- `/projects/:id` exists as a stub detail route; the dashboard is the real screen in this PR.
+- `/projects/:id` exists as a stub detail route; the dashboard is the real screen.
+
+### Actions menu (Rename / Delete)
+
+Each `ProjectCard` shows a `⋯` (MoreHorizontal) button in its header. Clicking it opens a dropdown with **Rename** and **Delete** options. The card itself remains a single semantic `<a>` via a stretched `RouterLink`; the menu lives on its own stacking context (`z-10`) so clicks on it never trigger navigation, and the focus ring is scoped to the link only (not the whole card when the menu button is focused).
+
+`ProjectsView` owns one instance each of `EditProjectDialog` and `DeleteProjectDialog`, retargeted per card — not one dialog per card. The target project persists through the close animation so the dialog doesn't blank out mid-transition.
+
+#### Rename
+
+Clicking **Rename** opens `EditProjectDialog`, prefilled with the card's `name` and `description`. The user can edit either field:
+
+- **Name** is required, validated via `UpdateProjectRequestSchema.safeParse`. Inline field errors surface on the input.
+- **Description** is optional. An emptied description sends `''` to clear it; provider fields stay omitted (out of scope → unchanged).
+
+While saving, the submit button reads *Saving…* and stays disabled. On success the dialog closes and the card updates in place. On failure the dialog stays open and shows a status-derived error message inline.
+
+#### Delete
+
+Clicking **Delete** opens `DeleteProjectDialog`, an explicit destructive confirm: the dialog names the project and warns that the project and its ideas will be permanently removed.
+
+- The confirm button is a plain `Button` (not `AlertDialogAction`) so the dialog stays open on failure to show the inline error, closing only on success.
+- While deleting, the button reads *Deleting…* and stays disabled.
+
+The delete uses the same `useDialogForm` composable as create and rename, but with no form fields — it consumes only the loading/error half of the contract.
+
+### Shared form behavior (`useDialogForm`)
+
+All three dialog flows (create, rename, delete) use the `useDialogForm` composable, which provides `validate` (calls `safeParse` and surfaces inline field errors) and `run` (calls the store action, handles loading state and inline error surfacing). This was extracted in PR #60 so all dialogs reuse the same plumbing.
 
 ## Why
 
 The Linear issue says signed-in users need to see their projects as cards on the landing page, with fast initial rendering and automatic loading as they scroll, so large workspaces never turn into a long wait. This PR consumes the paged projects contract from `2BU-37` and turns it into the first real screen in the web app.
 
+The actions menu closes `2BU-35`: users can now rename and delete projects inline from the dashboard, keeping their workspace tidy without navigating to a separate settings page.
+
 ## Edge cases & gotchas
 
 - `loadMoreError` does not replace the already-rendered list.
 - The sentinel disappears once there is no next cursor.
-- This doc covers the dashboard and the infinite-scroll behavior, not project creation, rename/delete, virtualization, search, or detail content.
-- The design and card copy in the source PR are implementation details; the stable contract here is the route/state/pagination behavior.
+- Reopening a dialog resets prior inputs and errors; each dialog starts clean.
+- The rename dialog seeds from the current project on open (`{ immediate: true }` watch) so a pre-opened dialog with a target works on mount.
+- The delete dialog keeps the confirm button as a plain `Button` (not `AlertDialogAction`) so it stays open on failure for the inline error; only success closes it.
+- This doc covers the dashboard, infinite-scroll behavior, and per-card actions; not project creation, virtualization, search, or detail content.
 
 ## References
 
-- Source PR: https://github.com/Eden-Cohen1/ideascout/pull/45
-- Linear issue: https://linear.app/2builders/issue/2BU-33/build-the-projects-list-view-the-dashboard
+- Source PR (dashboard & infinite scroll): https://github.com/Eden-Cohen1/ideascout/pull/45
+- Source PR (rename & delete actions): https://github.com/Eden-Cohen1/ideascout/pull/60
+- Linear issue (dashboard): https://linear.app/2builders/issue/2BU-33/build-the-projects-list-view-the-dashboard
+- Linear issue (rename & delete): https://linear.app/2builders/issue/2BU-35
 
-<!-- provenance: drafted from ideascout PR #45 -->
+<!-- provenance: derived from PR #45 and PR #60 (rename & delete project), reconciled 2026-07-18 -->
