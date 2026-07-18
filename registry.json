@@ -217,8 +217,8 @@
         "packages/shared/src/dto/project.dto.ts",
         "packages/shared/src/dto/pagination.ts"
       ],
-      "lastReconciledPR": 45,
-      "lastReconciledAt": "2026-07-15T05:41:23Z"
+      "lastReconciledPR": 62,
+      "lastReconciledAt": "2026-07-18T18:35:00Z"
     },
     {
       "docPath": "docs/platform/repo-agent-scaffolding.md",
@@ -241,8 +241,8 @@
         "packages/shared/src/dto/project.dto.ts",
         "packages/shared/src/index.ts"
       ],
-      "lastReconciledPR": 42,
-      "lastReconciledAt": "2026-07-14T20:01:06Z"
+      "lastReconciledPR": 62,
+      "lastReconciledAt": "2026-07-18T18:35:00Z"
     },
     {
       "docPath": "docs/features/workspaces/projects-dashboard.md",
@@ -261,8 +261,8 @@
         "apps/web/src/views/ProjectsView.vue",
         "apps/web/src/views/ProjectsView.spec.ts"
       ],
-      "lastReconciledPR": 45,
-      "lastReconciledAt": "2026-07-15T05:41:23Z"
+      "lastReconciledPR": 62,
+      "lastReconciledAt": "2026-07-18T18:35:00Z"
     },
     {
       "docPath": "docs/features/outreach/outreach-campaign-skeleton.md",
