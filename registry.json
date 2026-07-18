@@ -47,13 +47,14 @@
         "package.json",
         "apps/web/package.json",
         "apps/web/scripts/token-lint.mjs",
+        "apps/web/scripts/contrast-check.mjs",
         "apps/web/DESIGN.md",
         "eslint.config.mjs",
         ".github/workflows/ci.yml",
         "apps/web/src/**/*.vue"
       ],
-      "lastReconciledPR": 47,
-      "lastReconciledAt": "2026-07-15T05:45:46Z"
+      "lastReconciledPR": 49,
+      "lastReconciledAt": "2026-07-17T16:53:20Z"
     },
     {
       "docPath": "docs/features/research/signal-source-stack.md",
@@ -110,8 +111,8 @@
         ".claude/skills/frontend-task/references/testing.md",
         ".claude/skills/frontend-task/references/performance.md"
       ],
-      "lastReconciledPR": 41,
-      "lastReconciledAt": "2026-07-13T12:43:06Z"
+      "lastReconciledPR": 49,
+      "lastReconciledAt": "2026-07-17T16:53:20Z"
     },
     {
       "docPath": "docs/features/workspaces/project-creation-from-dashboard.md",
@@ -161,8 +162,8 @@
         "apps/web/src/lib/errors.ts",
         "packages/shared/src/dto/auth.dto.ts"
       ],
-      "lastReconciledPR": 35,
-      "lastReconciledAt": "2026-07-12T14:38:25Z"
+      "lastReconciledPR": 49,
+      "lastReconciledAt": "2026-07-17T16:53:20Z"
     },
     {
       "docPath": "docs/features/authentication/app-shell.md",
