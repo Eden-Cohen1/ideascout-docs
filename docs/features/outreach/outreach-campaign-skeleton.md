@@ -31,7 +31,7 @@ PR #52 adds the first outreach slice: founders can create a validation campaign 
   - `CampaignDetailView` renders the detail screen for a created campaign.
   - The web app adds campaign and idea API wrappers plus Pinia stores for both.
   - The UI covers loading, empty, error, and success states, and uses a lifecycle badge for the campaign state.
-- This slice stops at `DRAFT`; transitions to later lifecycle states are deferred.
+- This slice stops at `DRAFT`; transitions to later lifecycle states (`DISCOVERING`, `REVIEWING`) landed in PR #56 (see [contact discovery](contact-discovery.md)).
 
 ## Why
 
@@ -42,8 +42,8 @@ This is the steel thread for the phase-2 outreach flow described in 2BU-47 and 2
 - Omitting `maxContacts` uses the default of 50; values above 50 are rejected.
 - Campaign routes are nested under projects, so access depends on project ownership rather than a campaign-specific guard.
 - Creating a campaign for an idea in another project returns 404, not 403.
-- The shared lifecycle enum already includes future states even though this slice only emits `DRAFT`.
-- This PR does not implement persona discovery, contact discovery, interview flows, or any state transitions beyond `DRAFT`.
+- The shared lifecycle enum already includes future states even though this slice only emits `DRAFT` (DISCOVERING and REVIEWING are live; see [contact discovery](contact-discovery.md)).
+- This PR does not implement persona discovery, interview flows, or state transitions beyond `DRAFT`.
 
 ## References
 
