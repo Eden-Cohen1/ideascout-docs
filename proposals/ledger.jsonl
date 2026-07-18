@@ -50,3 +50,4 @@
 {"ts": "2026-07-18T16:08:00Z", "pr": 60, "event": "proposed", "outcome": "update-doc", "docPath": "docs/features/workspaces/projects-dashboard.md", "proposalPr": 36, "threadTs": "1784391050.975729", "approvedBy": null, "note": "draft proposal opened: per-card actions menu (rename/delete) on project cards"}
 {"ts":"2026-07-18T17:26:18Z","pr":61,"event":"proposed","outcome":"update-doc","docPath":"docs/features/workspaces/projects-dashboard.md","proposalPr":37,"threadTs":"1784395568.470529","note":"windowed rendering for project cards"}
 {"ts": "2026-07-18T18:33:11Z", "pr": 60, "event": "published", "outcome": "update-doc", "proposalPr": 36, "approvedBy": "github-merge", "note": "merged on GitHub"}
+{"ts": "2026-07-18T18:42:26Z", "pr": 61, "event": "published", "outcome": "update-doc", "proposalPr": 37, "approvedBy": "github-merge", "note": "merged on GitHub"}
