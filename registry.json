@@ -261,8 +261,8 @@
         "apps/web/src/views/ProjectsView.vue",
         "apps/web/src/views/ProjectsView.spec.ts"
       ],
-      "lastReconciledPR": 45,
-      "lastReconciledAt": "2026-07-15T05:41:23Z"
+      "lastReconciledPR": 60,
+      "lastReconciledAt": "2026-07-18T00:00:00Z"
     },
     {
       "docPath": "docs/features/outreach/outreach-campaign-skeleton.md",
