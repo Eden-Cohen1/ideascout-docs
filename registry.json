@@ -37,8 +37,8 @@
         "apps/web/src/lib/errors.ts",
         "apps/web/src/lib/notify.ts"
       ],
-      "lastReconciledPR": 29,
-      "lastReconciledAt": "2026-07-12T11:11:41Z"
+      "lastReconciledPR": 57,
+      "lastReconciledAt": "2026-07-18T00:00:00Z"
     },
     {
       "docPath": "docs/platform/web-verification-gate.md",
@@ -53,8 +53,8 @@
         ".github/workflows/ci.yml",
         "apps/web/src/**/*.vue"
       ],
-      "lastReconciledPR": 49,
-      "lastReconciledAt": "2026-07-17T16:53:20Z"
+      "lastReconciledPR": 57,
+      "lastReconciledAt": "2026-07-18T00:00:00Z"
     },
     {
       "docPath": "docs/features/research/signal-source-stack.md",
@@ -153,17 +153,28 @@
       "docPath": "docs/features/authentication/authentication.md",
       "title": "Authentication flow",
       "sourceGlobs": [
-        "apps/web/src/views/LoginView.vue",
-        "apps/web/src/views/RegisterView.vue",
-        "apps/web/src/router/index.ts",
+        "apps/web/src/views/AuthView.vue",
+        "apps/web/src/views/ForgotPasswordView.vue",
+        "apps/web/src/views/ResetPasswordView.vue",
+        "apps/web/src/views/VerifyEmailView.vue",
+        "apps/web/src/components/auth/AuthShell.vue",
+        "apps/web/src/components/auth/FormError.vue",
+        "apps/web/src/components/auth/GoogleIcon.vue",
+        "apps/web/src/components/auth/PasswordInput.vue",
+        "apps/web/src/components/auth/PasswordStrengthMeter.vue",
+        "apps/web/src/components/VerifyEmailBanner.vue",
         "apps/web/src/lib/auth-schemas.ts",
+        "apps/web/src/lib/password-strength.ts",
+        "apps/web/src/lib/query.ts",
         "apps/web/src/lib/redirect.ts",
         "apps/web/src/lib/validation.ts",
         "apps/web/src/lib/errors.ts",
+        "apps/web/src/router/index.ts",
+        "apps/web/src/style.css",
         "packages/shared/src/dto/auth.dto.ts"
       ],
-      "lastReconciledPR": 49,
-      "lastReconciledAt": "2026-07-17T16:53:20Z"
+      "lastReconciledPR": 57,
+      "lastReconciledAt": "2026-07-18T00:00:00Z"
     },
     {
       "docPath": "docs/features/authentication/app-shell.md",
@@ -173,10 +184,11 @@
         "apps/web/src/App.spec.ts",
         "apps/web/src/components/AppShell.vue",
         "apps/web/src/components/AppShell.spec.ts",
+        "apps/web/src/components/VerifyEmailBanner.vue",
         "apps/web/src/views/HomeView.vue"
       ],
-      "lastReconciledPR": 36,
-      "lastReconciledAt": "2026-07-12T15:24:18Z"
+      "lastReconciledPR": 57,
+      "lastReconciledAt": "2026-07-18T00:00:00Z"
     },
     {
       "docPath": "docs/platform/email-service.md",

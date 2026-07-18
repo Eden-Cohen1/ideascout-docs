@@ -45,7 +45,9 @@ checking in PR #49.
   scripts can run cleanly.
 - `apps/web/DESIGN.md` records the enforcement model: a deterministic lint gate plus human
   review for judgment calls that a regex cannot make, and contrast-check as a numeric gate
-  that no palette change can silently regress.
+  that no palette change can silently regress. The design tokens table now includes
+  `--auth-panel` / `--auth-panel-foreground` (scoped to `AuthShell` only), and `contrast-check`
+  verifies this pair against WCAG AA.
 
 ## Why
 

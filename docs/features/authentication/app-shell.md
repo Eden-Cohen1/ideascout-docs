@@ -23,7 +23,9 @@ public auth screens clean.
   - a plain `ideascout` wordmark linking home,
   - a muted avatar chip derived from the signed-in user,
   - the current user label when available,
-  - and a text-only logout button.
+  - a text-only logout button,
+  - and a `VerifyEmailBanner` above the main slot (shown below the header for
+    unverified users).
 - Logout reuses the existing auth store, then redirects to `/login`.
 - While logout is in flight, the button is disabled and shows `Signing out…` so repeated clicks
   are ignored.
