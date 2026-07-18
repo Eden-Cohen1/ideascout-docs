@@ -259,10 +259,12 @@
         "apps/web/src/views/HomeView.vue",
         "apps/web/src/views/ProjectDetailView.vue",
         "apps/web/src/views/ProjectsView.vue",
-        "apps/web/src/views/ProjectsView.spec.ts"
+        "apps/web/src/views/ProjectsView.spec.ts",
+        "apps/web/src/composables/useVirtualGrid.ts",
+        "apps/web/src/composables/useVirtualGrid.spec.ts"
       ],
-      "lastReconciledPR": 60,
-      "lastReconciledAt": "2026-07-18T00:00:00Z"
+      "lastReconciledPR": 61,
+      "lastReconciledAt": "2026-07-18T17:22:25Z"
     },
     {
       "docPath": "docs/features/outreach/outreach-campaign-skeleton.md",
