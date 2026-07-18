@@ -62,6 +62,34 @@ remount.
   The email and password values persist (no loss if the user mistypes and clicks
   the other tab).
 
+## Prove-then-link: password-proof Google linking (`/login?notice=verify-email`)
+
+When a Google sign-in matches an existing **unverified password** account, the
+OAuth callback redirects to `/login?notice=verify-email`. On this screen the user
+sees both options:
+
+1. **Password-proof fast path** — a notice banner plus a password form:
+   - A `PasswordInput` field (`#link-password`) for the account password.
+   - A "Connect Google with password" submit button.
+   - Submitting calls `authStore.linkGoogleWithPassword({ password })`, which
+     posts to `POST /auth/oauth/google/link`. The pending Google identity rides the
+     httpOnly `oauth_link` cookie (set by the callback), so only the password is
+     sent in the request body.
+   - **On success:** the user is authenticated and routed into the workspace.
+   - **On failure:** a generic enumeration-safe error is shown inline
+     (*"That password is incorrect, or this link has expired."*) and the user
+     stays on the screen. They can still use the emailed verification link.
+2. **Email-verification round-trip** — the callback also sent a verification
+   email; once verified, the next Google sign-in auto-links.
+
+### Screenshots
+
+| State | Screenshot |
+|:---|---:|
+| **Prove-then-link** (notice + password form) | ![Prove-then-link](https://raw.githubusercontent.com/Eden-Cohen1/ideascout/1b04946ff15c6228149296f821c718627a75f33b/docs/screenshots/2bu-44/01-prove-then-link.png) |
+| **Wrong password** (inline error) | ![Wrong password](https://raw.githubusercontent.com/Eden-Cohen1/ideascout/1b04946ff15c6228149296f821c718627a75f33b/docs/screenshots/2bu-44/02-prove-then-link-error.png) |
+| **Mobile** | ![Mobile](https://raw.githubusercontent.com/Eden-Cohen1/ideascout/1b04946ff15c6228149296f821c718627a75f33b/docs/screenshots/2bu-44/03-prove-then-link-mobile.png) |
+
 ## Forgot password (`/forgot-password`)
 
 A standalone view inside `AuthShell` that collects the user's email and sends a
