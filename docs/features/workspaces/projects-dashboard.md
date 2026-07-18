@@ -50,11 +50,11 @@ error, and first-run empty states.
 
 | State | Screenshot |
 | --- | --- |
-| Success (virtualized list) | <img width="440" src="https://raw.githubusercontent.com/Eden-Cohen1/ideascout/6bc12fc0fc4ced2a7cd93737a176880297780d4d/docs/screenshots/2bu-39/01-list.png"> |
-| Search — filtered (clear button + focus ring) | <img width="440" src="https://raw.githubusercontent.com/Eden-Cohen1/ideascout/6bc12fc0fc4ced2a7cd93737a176880297780d4d/docs/screenshots/2bu-39/02-search-filtered.png"> |
-| Filtered pagination (page 2 loaded within the filter) | <img width="440" src="https://raw.githubusercontent.com/Eden-Cohen1/ideascout/6bc12fc0fc4ced2a7cd93737a176880297780d4d/docs/screenshots/2bu-39/03-search-paginated-bottom.png"> |
-| No matches (distinct from empty workspace) | <img width="440" src="https://raw.githubusercontent.com/Eden-Cohen1/ideascout/6bc12fc0fc4ced2a7cd93737a176880297780d4d/docs/screenshots/2bu-39/04-no-matches.png"> |
-| Cleared (full list restored) | <img width="440" src="https://raw.githubusercontent.com/Eden-Cohen1/ideascout/6bc12fc0fc4ced2a7cd93737a176880297780d4d/docs/screenshots/2bu-39/05-cleared.png"> |
+| Success (virtualized list) | <img width="440" src="https://raw.githubusercontent.com/Eden-Cohen1/ideascout/6bc12fc0fc4ced2a7cd93737a176880297780d4d/docs/screenshots/2bu-39/01-list.png" /> |
+| Search — filtered (clear button + focus ring) | <img width="440" src="https://raw.githubusercontent.com/Eden-Cohen1/ideascout/6bc12fc0fc4ced2a7cd93737a176880297780d4d/docs/screenshots/2bu-39/02-search-filtered.png" /> |
+| Filtered pagination (page 2 loaded within the filter) | <img width="440" src="https://raw.githubusercontent.com/Eden-Cohen1/ideascout/6bc12fc0fc4ced2a7cd93737a176880297780d4d/docs/screenshots/2bu-39/03-search-paginated-bottom.png" /> |
+| No matches (distinct from empty workspace) | <img width="440" src="https://raw.githubusercontent.com/Eden-Cohen1/ideascout/6bc12fc0fc4ced2a7cd93737a176880297780d4d/docs/screenshots/2bu-39/04-no-matches.png" /> |
+| Cleared (full list restored) | <img width="440" src="https://raw.githubusercontent.com/Eden-Cohen1/ideascout/6bc12fc0fc4ced2a7cd93737a176880297780d4d/docs/screenshots/2bu-39/05-cleared.png" /> |
 
 ## Why
 
