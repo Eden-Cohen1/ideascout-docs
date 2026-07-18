@@ -72,13 +72,18 @@ The actions menu closes `2BU-35`: users can now rename and delete projects inlin
 - Reopening a dialog resets prior inputs and errors; each dialog starts clean.
 - The rename dialog seeds from the current project on open (`{ immediate: true }` watch) so a pre-opened dialog with a target works on mount.
 - The delete dialog keeps the confirm button as a plain `Button` (not `AlertDialogAction`) so it stays open on failure for the inline error; only success closes it.
-- This doc covers the dashboard, infinite-scroll behavior, and per-card actions; not project creation, virtualization, search, or detail content.
+- The card grid uses **windowed (virtualized) rendering** via `@tanstack/vue-virtual` (a window virtualizer over page scroll, so the page scrollbar and layout are unchanged). The flat list is chunked into grid rows and only the rows in — and just around — the viewport are kept in the DOM, recycling nodes as you scroll. It is a transparent performance optimization with no visual or behavioral change.
+- **Windowing is unconditional** — it is always active, not gated behind a row-count threshold. For a short list the window simply spans every row, so there is no visible difference; the payoff comes once a workspace grows into the hundreds of projects, where rendering every card at once would jank scrolling. (The `~172px` row-height estimate and 4-row overscan are tuning constants, not an on/off trigger.)
+- **Focus limitation:** focusing a card by pointer and then scrolling it far off-screen does not restore focus to that card on scroll-back — the off-screen row is unmounted, so focus falls back to the document body. The normal keyboard Tab flow (which keeps the focused card in the viewport) is unaffected.
+- This doc covers the dashboard, infinite-scroll behavior, and per-card actions; not project creation, search, or detail content.
 
 ## References
 
 - Source PR (dashboard & infinite scroll): https://github.com/Eden-Cohen1/ideascout/pull/45
 - Source PR (rename & delete actions): https://github.com/Eden-Cohen1/ideascout/pull/60
+- Source PR (windowed rendering): https://github.com/Eden-Cohen1/ideascout/pull/61
 - Linear issue (dashboard): https://linear.app/2builders/issue/2BU-33/build-the-projects-list-view-the-dashboard
 - Linear issue (rename & delete): https://linear.app/2builders/issue/2BU-35
+- Linear issue (windowing): https://linear.app/2builders/issue/2BU-38/virtualize-very-long-project-lists-windowed-rendering
 
-<!-- provenance: derived from PR #45 and PR #60 (rename & delete project), reconciled 2026-07-18 -->
+<!-- provenance: derived from PR #45, PR #60 (rename & delete project), and PR #61 (windowed rendering); reconciled 2026-07-18 -->
