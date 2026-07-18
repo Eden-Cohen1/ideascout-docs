@@ -10,12 +10,14 @@ This page documents the web auth session layer in ideascout: the thin HTTP wrapp
 
 ## Behavior
 
-- `src/api/auth.api.ts` is a thin wrapper over `apiFetch` and `ApiRoutes.auth.*` for `register`, `login`, `logout`, and `me`.
+- `src/api/auth.api.ts` is a thin wrapper over `apiFetch` and `ApiRoutes.auth.*` for `register`, `login`, `logout`, `me`, `verifyEmail`, `resetPassword`, `forgotPassword`, and `resendVerification`.
 - `src/stores/auth.store.ts` owns the session state: `user`, `isAuthenticated`, and `status` (`idle` | `loading` | `ready`).
-- The store exposes `login`, `register`, `logout`, and `fetchMe`.
+- The store exposes `login`, `register`, `logout`, `fetchMe`, `verifyEmail`, `resetPassword`, `forgotPassword`, and `resendVerification`.
 - The store registers an unauthorized hook so any 401 response clears the session.
 - `fetchMe()` is the boot-time hydration step: it resolves the initial `idle` state into a definite authenticated or logged-out state.
 - `login()` and `register()` set `status` to `loading`, then `ready` once the request completes; failures are normalized and rethrown so the view can render inline form errors.
+- `verifyEmail()` and `resetPassword()` work like login/register: they set `status` to `loading`, call the API, and update the session on success. On failure they restore `ready` and rethrow the error without notifying (the view renders the message inline).
+- `forgotPassword()` and `resendVerification()` are enumeration-safe — the API returns a generic 200 whether or not the account exists — so they do not touch `status` or the session. Errors (network/5xx only) rethrow for inline UI handling.
 - `logout()` clears the local session even if the remote logout call fails.
 - `src/lib/errors.ts` normalizes failures into `ApiError`, logs once with context, and keeps auth forms from inventing their own error handling.
 - `src/lib/notify.ts` provides the shared notification sink with a console fallback until the toast host registers.

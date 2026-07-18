@@ -6,53 +6,161 @@ sidebar_position: 1
 
 # Authentication flow
 
-This page documents the login and account-creation screens in the web app, along with the
-redirect behavior around them. It is for anyone changing the auth UI, auth routes, or the
-shared validation and error-handling helpers those screens depend on.
+This page documents the auth screens in the web app — sign-in, sign-up, password
+reset, email verification — along with the unified `AuthShell` layout and the
+shared auth components. It is for anyone changing the auth UI, auth routes, or
+the shared validation and error-handling helpers those screens depend on.
 
-## Behavior
+## AuthShell — the split-screen brand panel
 
-- The app exposes three public routes: `/` (the marketing landing page), `/login`, and
-  `/register`.
-- `LoginView` collects email and password.
-- `RegisterView` collects name, email, password, and password confirmation.
-- Both screens use the shared Zod request schemas from `@ideascout/shared` to validate the
-  form before any request is sent.
+All auth screens render inside `AuthShell`, a split-screen layout:
+
+- **Desktop (lg+):** a brand panel on the left (soft cobalt wash via the scoped
+  `--auth-panel` / `--auth-panel-foreground` token pair) showing the product
+  pitch (Evaluate → Refine → Validate) and a cited-research trust mark. The form
+  renders on the right.
+- **Mobile (below lg):** the brand panel is hidden; a compact wordmark is shown
+  above the form instead.
+
+The `--auth-panel` token is deliberately *not* `--accent`, so the panel can be
+retuned without touching ghost-hover surfaces. It is registered in `contrast-check`
+and documented in `DESIGN.md`.
+
+## Sign-in / Sign-up (`/login`, `/register`)
+
+Both `/login` and `/register` render the **same** `AuthView` component. Vue Router
+reuses the instance when navigating between them — the mode (login or register)
+flips reactively, so the heading, mode-specific fields (Name, Confirm password),
+and strength meter transition with an expand/swap animation instead of a hard
+remount.
+
+- **Login** collects email and password; validation uses the shared
+  `LoginRequestSchema`.
+- **Register** collects name (optional), email, password, and password
+  confirmation; validation uses the shared `RegisterFormSchema`.
+- The password field uses `PasswordInput` (inline show/hide toggle with eye icon).
+- On register, `PasswordStrengthMeter` appears below the password field once the
+  user starts typing. The four-segment indicator maps score to semantic colors
+  (destructive → warning → success).
+- The "Continue with Google" button is a full-page redirect to
+  `/auth/oauth/google/start` — a plain `<a>` tag, not a fetch.
+- An "or continue with email" divider separates the OAuth button from the form.
+- A "Forgot password?" link on the login form navigates to `/forgot-password`.
 - Validation errors render inline under the matching field.
-- Submit buttons stay disabled while a request is in flight and change label to show the
-  loading state.
-- Both screens call the auth store and show the server failure inline on error.
-- After a successful sign-in or sign-up, the app navigates to the route named by
-  `?redirect=` when that query value is a same-app path (excluding `/` itself); otherwise
-  it falls back to `/projects` (the authenticated home — `/` is the public marketing page,
-  not a useful landing after login).
-- The `/` route has `publicOnly` meta: authenticated users visiting `/` are redirected to
+- Submit buttons stay disabled while a request is in flight and change label
+  (`Signing in…` / `Creating account…`).
+- On success the app navigates to the route named by `?redirect=` when that query
+  value is a same-app path; otherwise it falls back to `/projects`.
+- Mode-specific fields (Name, Confirm, strength meter) use CSS
+  `grid-template-rows: 0fr↔1fr` transitions for smooth expand/collapse without
+  magic pixel values.
+- Signed-in users are kept out via the `publicOnly` route guard and redirected to
+  `/projects`. The public marketing landing page at `/` carries the same
+  `publicOnly` meta, so an authenticated user who hits `/` is likewise sent to
   `/projects`.
-- Signed-in users are kept out of `/login` and `/register` and sent back to `/projects`.
-- The login page links to registration and preserves the current query string.
-- The registration page links back to login and preserves the current query string.
+- Switching mode (login ↔ register) clears field-level and form-level errors.
+  The email and password values persist (no loss if the user mistypes and clicks
+  the other tab).
+
+## Forgot password (`/forgot-password`)
+
+A standalone view inside `AuthShell` that collects the user's email and sends a
+reset link.
+
+- Email-only form with validation.
+- Enumeration-safe: the API acknowledges identically whether or not the account
+  exists, returning a generic `{ message }` on success.
+- Shows a confirmation message after submission ("Check your inbox for the reset
+  link.").
+- Links back to login.
+
+## Reset password (`/reset-password?token=…`)
+
+A standalone view inside `AuthShell` that sets a new password from a reset link.
+
+- The single-use `token` comes from the URL query (`?token=…`), not the form.
+- The form validates the new password + a client-only confirmation match.
+- Uses `PasswordInput` and `PasswordStrengthMeter`.
+- On success the backend logs the user in (sets the httpOnly cookie), so the app
+  routes into the workspace at `/projects`.
+- A missing or blank token renders a clean dead-end ("This reset link is invalid")
+  with a link to request a new one.
+- An expired or already-used token shows the server error inline and offers a
+  "Request a new link" action.
+
+## Verify email (`/verify-email?token=…`)
+
+A standalone view inside `AuthShell` that confirms an email from a verification
+link. The token comes from the URL and is submitted automatically on mount — the
+user just lands here from their inbox.
+
+- **Verifying phase:** shows a loading state while the API confirms the token.
+- **Success phase:** authenticates the user (cookie set), shows a success
+  message with a "Continue" link to `/projects`, and auto-redirects after 1.5
+  seconds (timer cleared on unmount).
+- **Error phase:** shows the error (expired/reused/missing token). If the user
+  is still signed in (unverified), a "Resend verification email" button is
+  shown. If not signed in, it offers "Sign in to resend".
+
+## Verify email banner (in `AppShell`)
+
+A dismissible nudge bar shown inside the authenticated `AppShell` while the
+signed-in user has not yet verified their email (`emailVerified === false`).
+
+- Renders only when `emailVerified` is definitely `false` — never when the flag
+  is absent.
+- Shows the user's email and a "Resend email" button.
+- On send success, the text changes to "Verification email sent — check your
+  inbox."
+- The banner can be dismissed via an X button. It stays dismissed for the
+  session.
+- Verification gates expensive actions (starting a research run), not browsing.
 
 ## Why
 
-The linked product issue framed this work as adding the missing path for users to sign in or
-create an account so they can access their workspace. It also explicitly kept password reset
-and OAuth out of scope, so this page only documents the in-app email/password flow.
+The PR turns the auth UI into a single, reusable surface that supports both
+email/password and Google sign-in, and completes the recovery/verification flow
+that the backend already implemented. The split-screen `AuthShell` gives every
+auth screen a consistent brand presentation, and the shared `AuthView` avoids
+route-level duplication between login and register.
 
 ## Edge cases & gotchas
 
-- The registration form treats a blank or whitespace-only display name as omitted.
+- `LoginView.vue` and `RegisterView.vue` are **deleted** — superseded by
+  `AuthView.vue`. Both `/login` and `/register` now point to `AuthView.vue`.
+- The registration form treats a blank or whitespace-only display name as
+  omitted.
 - `confirmPassword` is a client-only field; the API never receives it.
-- The redirect helper only accepts same-app paths that start with a single `/`. Protocol-relative
-  values like `//example.com`, strings without a leading slash, and non-string values (e.g. a
-  repeated `?redirect=` query param, which arrives as an array) all fall back to `/projects`.
-  The path `/` itself is also rejected — a stale `?redirect=/` falls through to `/projects`
-  instead of bouncing a fresh login back to the public marketing page.
-- The auth error handler turns a bare `401 Unauthorized` into session-expired copy, but keeps a
-  specific server message such as invalid credentials when one is provided.
-- Field validation shows one message per field, with the first issue winning.
+- The `?redirect=` helper only accepts same-app paths that start with a single
+  `/`. Protocol-relative values like `//example.com`, strings without a leading
+  slash, and non-string values (e.g. a repeated `?redirect=` query param, which
+  arrives as an array) all fall back to `/projects`. The path `/` itself is also
+  rejected — a stale `?redirect=/` falls through to `/projects` instead of
+  bouncing a fresh login back to the public marketing page.
+- Forgot-password and resend-verification are enumeration-safe: the API returns
+  the same response whether or not the account exists.
+- Reset-password and verify-email authenticate the user on success (the API sets
+  the httpOnly cookie), matching the `reset ⇒ signed in` contract.
+- The auth error handler turns a bare `401 Unauthorized` into session-expired
+  copy, but keeps a specific server message such as invalid credentials when one
+  is provided.
+- Field-level validation shows one message per field, with the first issue
+  winning.
+- The reset and verify routes do **not** carry `publicOnly` or `requiresAuth`
+  meta — reset and verify sign the user in on success, and an unverified user
+  may hit verify while already logged in.
+- The verify-email auto-redirect timer is cleared on unmount so it cannot fire
+  after the component is gone.
+- Avatar initials are derived from name words, falling back to the email
+  local-part.
 
 ## Related
 
+- [Auth API and Pinia store](./auth-session-layer.md)
+- [Auth token foundation](./auth-token-foundation.md)
+- [Backend authentication slice](./authentication-slice.md)
+- [Authenticated app shell](./app-shell.md)
 - [Documentation home](/)
 
-<!-- provenance: updated for PR #49 (marketing home page + Evidence Ledger rebrand); original from PR #35 (Add Login and Register views) -->
+<!-- provenance: drafted from ideascout PR #57 (auth redesign Option B with email verification & password reset, supersedes #51), reconciled after design-system merge; rebased onto PR #49 canonical (marketing home + Evidence Ledger rebrand), preserving the `/` publicOnly + redirect-guard behavior; original from PR #35 (Add Login and Register views) -->
+
