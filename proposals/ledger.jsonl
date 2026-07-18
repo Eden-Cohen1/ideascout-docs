@@ -41,3 +41,4 @@
 {"ts": "2026-07-17T00:14:02Z", "pr": 51, "event": "published", "outcome": "update-doc", "proposalPr": 28, "approvedBy": "github-merge", "note": "merged on GitHub"}
 {"ts": "2026-07-17T10:48:48Z", "pr": 52, "event": "published", "outcome": "update-doc", "proposalPr": 29, "approvedBy": "github-merge", "note": "merged on GitHub"}
 {"ts": "2026-07-17T14:00:46Z", "pr": 55, "event": "no-change", "outcome": "no-change", "docPath": null, "proposalPr": null, "approvedBy": null, "note": "Merged PR only added CI/plumbing files (.github/pull_request_template.md and .github/workflows/frontend-screenshots.yml); no canonical docs impact."}
+{"ts":"2026-07-18T12:08:35Z","pr":56,"event":"proposed","outcome":"new-doc","docPath":"docs/features/outreach/contact-discovery.md","proposalPr":33,"threadTs":"1784376553.601539","note":"draft proposal opened — contact discovery & enrichment (2BU-51)"}

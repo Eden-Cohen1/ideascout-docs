@@ -274,6 +274,43 @@
       ],
       "lastReconciledPR": null,
       "lastReconciledAt": null
+    },
+    {
+      "docPath": "docs/features/outreach/contact-discovery.md",
+      "title": "Contact discovery & enrichment",
+      "sourceGlobs": [
+        ".env.example",
+        "apps/api/prisma/schema.prisma",
+        "apps/api/prisma/migrations/**",
+        "apps/api/src/config/config.schema.ts",
+        "apps/api/src/config/config.service.ts",
+        "apps/api/src/modules/jobs/jobs.tokens.ts",
+        "apps/api/src/modules/jobs/jobs.module.ts",
+        "apps/api/src/modules/outreach/campaigns.controller.ts",
+        "apps/api/src/modules/outreach/campaigns.mapper.ts",
+        "apps/api/src/modules/outreach/contacts.mapper.ts",
+        "apps/api/src/modules/outreach/discovery.processor.ts",
+        "apps/api/src/modules/outreach/discovery.service.ts",
+        "apps/api/src/modules/outreach/match-rationale.ts",
+        "apps/api/src/modules/providers/people/**",
+        "apps/api/src/modules/providers/providers.controller.ts",
+        "apps/api/src/modules/providers/providers.module.ts",
+        "apps/api/src/modules/providers/provider.tokens.ts",
+        "apps/api/src/worker.ts",
+        "apps/web/src/api/campaigns.api.ts",
+        "apps/web/src/components/outreach/DiscoveryStatusPanel.vue",
+        "apps/web/src/components/outreach/ContactReviewPanel.vue",
+        "apps/web/src/stores/campaigns.store.ts",
+        "apps/web/src/views/CampaignDetailView.vue",
+        "packages/shared/src/domain/contact.schema.ts",
+        "packages/shared/src/domain/http-url.schema.ts",
+        "packages/shared/src/dto/campaign.dto.ts",
+        "packages/shared/src/dto/contact.dto.ts",
+        "packages/shared/src/enums.ts",
+        "packages/shared/src/index.ts"
+      ],
+      "lastReconciledPR": null,
+      "lastReconciledAt": null
     }
   ]
 }
