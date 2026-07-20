@@ -52,3 +52,4 @@
 {"ts": "2026-07-18T18:33:11Z", "pr": 60, "event": "published", "outcome": "update-doc", "proposalPr": 36, "approvedBy": "github-merge", "note": "merged on GitHub"}
 {"ts": "2026-07-18T18:42:26Z", "pr": 61, "event": "published", "outcome": "update-doc", "proposalPr": 37, "approvedBy": "github-merge", "note": "merged on GitHub"}
 {"ts": "2026-07-20T05:06:13Z", "pr": 53, "event": "published", "outcome": "update-doc", "proposalPr": 31, "approvedBy": "github-merge", "note": "merged on GitHub"}
+{"ts":"2026-07-20T05:07:00Z","pr":63,"event":"proposed","outcome":"update-doc","docPath":"docs/features/outreach/outreach-campaign-skeleton.md","proposalPr":39,"threadTs":"1784524101.784329","approvedBy":null,"note":"per-contact sequences and mode toggle (2BU-54)"}
