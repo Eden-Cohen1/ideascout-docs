@@ -278,17 +278,21 @@
         "apps/web/src/api/campaigns.api.ts",
         "apps/web/src/api/ideas.api.ts",
         "apps/web/src/components/outreach/**",
+        "apps/web/src/components/ui/toggle-group/**",
         "apps/web/src/router/index.ts",
         "apps/web/src/stores/campaigns.store.ts",
         "apps/web/src/stores/ideas.store.ts",
         "apps/web/src/views/CampaignDetailView.vue",
         "apps/web/src/views/OutreachView.vue",
+        "packages/shared/src/contact-mode.ts",
+        "packages/shared/src/domain/sequence.schema.ts",
         "packages/shared/src/dto/campaign.dto.ts",
+        "packages/shared/src/dto/contact.dto.ts",
         "packages/shared/src/enums.ts",
         "docs/superpowers/specs/2026-07-14-outreach-market-research.md"
       ],
-      "lastReconciledPR": null,
-      "lastReconciledAt": null
+      "lastReconciledPR": 63,
+      "lastReconciledAt": "2026-07-20T05:04:54Z"
     }
   ]
 }
